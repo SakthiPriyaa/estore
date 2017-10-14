@@ -1,9 +1,11 @@
 package com.nec.estore.backend.impl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import com.nec.estore.backend.dao.CustomerDao;
@@ -35,12 +37,38 @@ public class CustomerImpl implements CustomerDao {
 		
 	}
 
-	public Customer findById(int id) {
+	
+	public Set<Customer> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Set<Customer> findAll() {
+	public Customer findByEmail(String email,String password) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
+		Query query = session.createQuery(hql);
+		List results = query.list();
+		if(results!=null)
+			return (Customer) results.get(0);
+		
+		else
+			return null;	
+	}
+
+	public boolean validate(String email, String password) {
+		Session session=sessionFactory.openSession();
+		String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
+		Query query = session.createQuery(hql);
+		List results = query.list();
+		if(results!=null)
+			return true;
+		
+		else
+			return false;	
+	}
+
+	public Customer findByEmail(String email) {
 		// TODO Auto-generated method stub
 		return null;
 	}
