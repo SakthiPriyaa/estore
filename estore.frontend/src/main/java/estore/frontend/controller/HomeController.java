@@ -23,6 +23,11 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("myhome");
 		return mv;
 	}
+	@RequestMapping(value="/products", method=RequestMethod.GET)
+	public ModelAndView viewProducts(){
+		ModelAndView mv=new ModelAndView("products");
+		return mv;
+	}
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public ModelAndView register(){
 		//ModelAndView mv=new ModelAndView("register");

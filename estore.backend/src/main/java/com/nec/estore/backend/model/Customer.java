@@ -11,19 +11,19 @@ import javax.persistence.Table;
 public class Customer {
 	@Id
 	@GeneratedValue//@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@Column(name="cust_id")
 	private int id;
-	@Column(name="name")
+	@Column(name="cust_name")
 	private String name;
-	@Column(name="email")
+	@Column(name="cust_email",unique=true)
 	private String email;
-	@Column(name="address")
+	@Column(name="cust_address")
 	private String address;
-	@Column(name="contact")
+	@Column(name="cust_contact")
 	private String contact;
-	@Column(name="password")
+	@Column(name="cust_password")
 	private String password;
-	@Column(name="confirmpassword")
+	@Column(name="cust_confirmpassword")
 	private String confirmpassword;
 	
 	public int getId() {

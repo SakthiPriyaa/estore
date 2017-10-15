@@ -169,7 +169,7 @@
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="register" action="register" method="POST" role="form" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Id" value="">
