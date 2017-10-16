@@ -45,10 +45,12 @@ public class CustomerImpl implements CustomerDao {
 
 	public Customer findByEmail(String email,String password) {
 		// TODO Auto-generated method stub
+		List results = null;
 		Session session=sessionFactory.openSession();
 		String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
 		Query query = session.createQuery(hql);
-		List results = query.list();
+		
+		results = query.list();
 		if(results!=null)
 			return (Customer) results.get(0);
 		
@@ -60,7 +62,8 @@ public class CustomerImpl implements CustomerDao {
 		Session session=sessionFactory.openSession();
 		String hql = "FROM Customer C WHERE C.email = '" + email +"'AND C.password ='" + password + "'" ;
 		Query query = session.createQuery(hql);
-		List results = query.list();
+		List results = null;
+		results = query.list();
 		if(results!=null)
 			return true;
 		

@@ -13,6 +13,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
 import com.nec.estore.backend.model.Customer;
+import com.nec.estore.backend.model.Product;
 
 @Configuration
 @ComponentScan({"com.nec.estore.backend"})
@@ -44,7 +45,7 @@ public class HibernateConfig {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		builder.addProperties(getHibernateProperties());
 		builder.addAnnotatedClass(Customer.class);
-		//builder.addAnnotatedClass(Product.class);
+		builder.addAnnotatedClass(Product.class);
 		return builder.buildSessionFactory();
 	}
 

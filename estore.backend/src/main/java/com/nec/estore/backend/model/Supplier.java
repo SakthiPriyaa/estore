@@ -2,44 +2,33 @@ package com.nec.estore.backend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.ForeignKey;
-//import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//import org.hibernate.annotations.ForeignKey;
+
 @Entity
-@Table(name="Products")
-public class Product {
+@Table(name="Suppliers")
+public class Supplier {
 	@Id
 	//@GeneratedValue//@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="prod_id")//,unique=true
+	@Column(name="sup_id")//,unique=true
 	private String id;
-	@Column(name="prod_img")//,unique=true
-	private String img;
-	@Column(name="prod_name")
+	@Column(name="sup_name")
 	private String name;
-	@Column(name="prod_desc")
+	@Column(name="sup_Address")
 	private String  desc;
-	@Column(name="prod_stock")
+	@Column(name="sup_email")
 	private int stock;
-	@Column(name="prod_price")
-	private float price;
-	/*@ForeignKey(name="sup_id")
-	private int s_id;*/
-	
-	
+	@Column(name="sup_contact")
+	private float contact;
+	/*@ForeignKey(name="prod_id")
+	private String prod_id;*/
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	
-	public String getImg() {
-		return img;
-	}
-	public void setImg(String img) {
-		this.img = img;
 	}
 	public String getName() {
 		return name;
@@ -59,13 +48,11 @@ public class Product {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	public float getPrice() {
-		return price;
+	public float getContact() {
+		return contact;
 	}
-	public void setPrice(float price) {
-		this.price = price;
+	public void setContact(float contact) {
+		this.contact = contact;
 	}
-	
-	
 
 }

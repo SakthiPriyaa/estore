@@ -110,10 +110,10 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="stock">Home</a></li>
-		<li><a href="add"><span class="glyphicon glyphicon-plus">Add</a></li>
-		<li><a href="update"><span class="glyphicon glyphicon-pencil">Update</a></li>
-		<li class="active"><a href="delete"><span class="glyphicon glyphicon-trash">Delete</a></li>
-        <li><a href="view"><span class="glyphicon glyphicon-list-alt">My Products</a></li>
+		<li><a href="add"><span class="glyphicon glyphicon-plus"></span>Add</a></li>
+		<li><a href="update"><span class="glyphicon glyphicon-pencil"></span>Update</a></li>
+		<li class="active"><a href="delete"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+        <li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -126,7 +126,7 @@
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
-				
+				<div class="panel panel-delete">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
@@ -155,7 +155,7 @@
 								</form>
 </div>
 </div>
-</div></div>
+</div></div></div>
 </div>
 </div>
 

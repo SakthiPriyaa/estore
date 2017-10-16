@@ -126,7 +126,7 @@
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
-				
+					<div class="panel panel-update">
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
@@ -137,7 +137,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="update" method="POST" role="form" style="display: block;">
+						<form id="update" action="stock" method="POST" role="form" style="display: block;">
 									
 									<div class="form-group">
 										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
@@ -167,7 +167,7 @@
 								</form>
 </div>
 </div>
-</div></div>
+</div></div></div>
 </div>
 </div>
 
