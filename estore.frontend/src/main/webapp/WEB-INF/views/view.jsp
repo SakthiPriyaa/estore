@@ -23,11 +23,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Home</a></li>
 		<li><a href="add"><span class="glyphicon glyphicon-plus">Add</a></li>
 		<li><a href="update"><span class="glyphicon glyphicon-pencil">Update</a></li>
 		<li><a href="delete"><span class="glyphicon glyphicon-trash">Delete</a></li>
-        <li><a href="view"><span class="glyphicon glyphicon-list-alt">My Products</a></li>
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-list-alt">My Products</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">

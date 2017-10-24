@@ -1,7 +1,6 @@
 package com.nec.estore.backend.impl;
 
 import java.util.List;
-import java.util.Set;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,7 +16,6 @@ public class ProductImpl implements ProductDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 	public void save(Product entity) {
-		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(entity);
@@ -26,13 +24,13 @@ public class ProductImpl implements ProductDao{
 		
 	}
 	
-	public void delete(String id) {
-		// TODO Auto-generated method stub
+	public void delete(int pid) {
 		Session session=sessionFactory.openSession();
 		String hql = "DELETE FROM Product P  "  + 
-	             "WHERE P.id ='" + id +"'" ;
+	             "WHERE P.id ='" + pid +"'" ;
 		Query query = session.createQuery(hql);
 		query.executeUpdate();
+		session.getTransaction().commit();
 		session.close();
 		
 		
@@ -48,18 +46,19 @@ public class ProductImpl implements ProductDao{
 		
 	}
 
-	public Product findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Product findById(int pid) {
+		return (Product)sessionFactory.openSession().get(Product.class,pid);
 	}
 
-	public Set<Product> findAll() {
-		// TODO Auto-generated method stub
+	public List<Product> findAll() {
 		Session session=sessionFactory.openSession();
 		String hql = "FROM Product";
 		Query query = session.createQuery(hql);
-		Set<Product> results = (Set<Product>) query.list();
+		List<Product> results =  query.list();
+		System.out.println(results);
+		//session.getTransaction().commit();
 		return results;
+		
 	}
 
 }

@@ -118,7 +118,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
-        <li><a href="myhome"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
 	</ul>
     </div>
   </div>

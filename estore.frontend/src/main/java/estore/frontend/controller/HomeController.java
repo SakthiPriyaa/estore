@@ -18,33 +18,22 @@ public class HomeController {
 	private CustomerDao customerDao;
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(){
-		ModelAndView mv=new ModelAndView("myhome");
+		ModelAndView mv=new ModelAndView("home");
 		return mv;
 	}
-	@RequestMapping(value="/products", method=RequestMethod.GET)
-	public ModelAndView viewProducts(){
-		ModelAndView mv=new ModelAndView("products");
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView showHome(){
+		ModelAndView mv=new ModelAndView("home");
 		return mv;
 	}
-	@RequestMapping(value="/register", method=RequestMethod.GET)
-	public ModelAndView register(){
-		//ModelAndView mv=new ModelAndView("register");
-		ModelAndView mv=new ModelAndView("register","command",new Customer());
-		return mv;
-	}
-	@RequestMapping(value="/login", method=RequestMethod.GET)
-	public ModelAndView login(){
-		//ModelAndView mv=new ModelAndView("register");
-		ModelAndView mv=new ModelAndView("login","command",new Customer());
+	@RequestMapping(value="/usrhome", method=RequestMethod.GET)
+	public ModelAndView showMyHome(){
+		ModelAndView mv=new ModelAndView("usrhome");
 		return mv;
 	}
 	
-	/*@RequestMapping(value="/products", method=RequestMethod.GET)
-	public ModelAndView showProducts(){
-		//ModelAndView mv=new ModelAndView("register");
-		ModelAndView mv=new ModelAndView("products","command",new Products());
-		return mv;
-	}*/
+
+	
 	
 	
 }

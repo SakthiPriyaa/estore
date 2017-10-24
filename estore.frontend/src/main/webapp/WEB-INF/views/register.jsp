@@ -141,14 +141,14 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="myhome">Home</a></li>
+        <li><a href="home">Home</a></li>
         <li><a href="products">Products</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li  class="active"><a href="#"><span class="glyphicon glyphicon-pencil"></span>Register</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span>LogIn</a></li>        
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-user"></span>LogIn</a></li>        
+        <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge"></span></a></li>
       </ul>
     </div>
   </div>

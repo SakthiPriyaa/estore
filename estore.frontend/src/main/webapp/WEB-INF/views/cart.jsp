@@ -30,13 +30,13 @@ body {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="usrhome">Home</a></li>
-        <li><a href="myproducts">Products</a></li>
+        <li><a href="home">Home</a></li>
+        <li><a href="products">Products</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">2</span> </a></li>
-        <li><a href="myhome"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-user"></span>LogIn</a></li>
 	</ul>
     </div>
   </div>
@@ -51,7 +51,7 @@ body {
 							<div class="col-xs-6">
 								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
 							</div>
-							<div class="col-xs-6"><a href="myproducts">
+							<div class="col-xs-6"><a href="products">
 								<button type="button" class="btn btn-primary btn-sm btn-block" >
 									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
 								</button></a>
@@ -121,7 +121,7 @@ body {
 							<h4 class="text-right">Total <strong>$50.00</strong></h4>
 						</div>
 						<div class="col-xs-3">
-							<a href="custdetails" type="button" class="btn btn-success btn-block">
+							<a href="login" type="button" class="btn btn-success btn-block">
 								Pay
 							</a>
 						</div>

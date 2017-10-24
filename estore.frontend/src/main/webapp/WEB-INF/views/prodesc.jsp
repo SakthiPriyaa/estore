@@ -22,13 +22,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="myproducts">Products</a></li>
+        <li><a href="home">Home</a></li>
+        <li class="active"><a href="products">Products</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">2</span> </a></li>
-        <li><a href="myhome"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+        <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">1</span> </a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-user"></span>LogIn</a></li>
 	</ul>
     </div>
   </div>
@@ -51,10 +51,10 @@
 		<tr><td>Supplier:</td><td>WE ARE GAMES</td></tr>
 		<tr><td>Price:</td><td>$20.00</td></tr>
 		</table></div>
-        <div class="panel-footer"><a href="myproducts" role="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
+        <div class="panel-footer"><a href="products" role="button" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 						</div></a>
 	</div>
-	<div class="col-sm-offset-5 col-centered"><a href="myproducts"
+	<div class="col-sm-offset-5 col-centered"><a href="products"
 			role="button" class="btn btn-success btn-sm btn-block">
 	<span class="glyphicon glyphicon-share-alt"></span>Continue Shopping
 	</a></div>

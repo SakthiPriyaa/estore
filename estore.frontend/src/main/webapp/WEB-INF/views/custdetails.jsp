@@ -27,8 +27,8 @@
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">2</span> </a></li>
-        <li><a href="myhome"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+        <li class="active"><a href="mycart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">2</span> </a></li>
+        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
 	</ul>
     </div>
   </div>

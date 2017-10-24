@@ -118,7 +118,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
-        <li><a href="myhome"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
+        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
 	</ul>
     </div>
   </div>
@@ -137,27 +137,30 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="add" action="add" method="POST" role="form" style="display: block;">
+						<form id="add"  method="POST" role="form" style="display: block;" >
 									
-									<div class="form-group">
-										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Product Name" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="desc" id="desc" tabindex="1" class="form-control" placeholder="Description" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="stock" id="stock" tabindex="1" class="form-control" placeholder="Stock" >
-									</div>
-									<div class="form-group">
-										<input type="text" name="price" id="price" tabindex="1" class="form-control" placeholder="Price">
-									</div>
 									<!-- <div class="form-group">
-										<input type="image" name="img" id="img"" tabindex="1" class="form-control" placeholder="img">
-										<input type="button" name="upload"  tabindex="1" class="form-control" placeholder="img">
+										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
 									</div> -->
+									<div class="form-group">
+										<input type="text" name="sid" id="sid" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="pdesc" id="pdesc" tabindex="1" class="form-control" placeholder="Description" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="pstock" id="pstock" tabindex="1" class="form-control" placeholder="Stock" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
+									</div>
+									<div class="form-group">
+										<input type="file" name="pimg" id="pimg"" tabindex="1" class="form-control" placeholder="Image">
+										
+									</div>
 													
 																
 									<div class="form-group">
