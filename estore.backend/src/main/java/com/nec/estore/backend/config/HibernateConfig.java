@@ -12,8 +12,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.nec.estore.backend.model.Category;
 import com.nec.estore.backend.model.Customer;
 import com.nec.estore.backend.model.Product;
+import com.nec.estore.backend.model.Supplier;
 
 @Configuration
 @ComponentScan({"com.nec.estore.backend"})
@@ -46,6 +48,8 @@ public class HibernateConfig {
 		builder.addProperties(getHibernateProperties());
 		builder.addAnnotatedClass(Customer.class);
 		builder.addAnnotatedClass(Product.class);
+		builder.addAnnotatedClass(Supplier.class);
+		builder.addAnnotatedClass(Category.class);
 		return builder.buildSessionFactory();
 	}
 

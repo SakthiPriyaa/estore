@@ -24,7 +24,14 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-		<li><a href="add"><span class="glyphicon glyphicon-plus">Add</a></li>
+		<li><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a>
+			<ul>
+				<li ><a href="add/product"><span class="glyphicon glyphicon-plus"></span>Add Product</a>
+				<li ><a href="add/category"><span class="glyphicon glyphicon-plus"></span>Add Category</a>
+				<li ><a href="add/supplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a>
+			</ul>
+			
+		</li>
 		<li><a href="update"><span class="glyphicon glyphicon-pencil">Update</a></li>
 		<li><a href="delete"><span class="glyphicon glyphicon-trash">Delete</a></li>
         <li><a href="view"><span class="glyphicon glyphicon-list-alt">My Products</a></li>

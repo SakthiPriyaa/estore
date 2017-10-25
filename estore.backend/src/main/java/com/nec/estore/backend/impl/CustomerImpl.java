@@ -18,7 +18,6 @@ public class CustomerImpl implements CustomerDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	public void save(Customer entity) {
-		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(entity);

@@ -110,7 +110,14 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="stock">Home</a></li>
-		<li class="active"><a href="add"><span class="glyphicon glyphicon-plus"></span>Add</a></li>
+		<li class="active"><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a>
+			<ul>
+				<li class="active"><a href="add/product"><span class="glyphicon glyphicon-plus"></span>Add Product</a>
+				<li class="active"><a href="add/category"><span class="glyphicon glyphicon-plus"></span>Add Category</a>
+				<li class="active"><a href="add/supplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a>
+			</ul>
+			
+		</li>
 		<li><a href="update"><span class="glyphicon glyphicon-pencil"></span>Update</a></li>
 		<li><a href="delete"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
         <li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
@@ -137,7 +144,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="add"  method="POST" role="form" style="display: block;" >
+						<form id="add"  action="product" method="POST" role="form" style="display: block;" >
 									
 									<!-- <div class="form-group">
 										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
@@ -166,7 +173,95 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add">
+												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add Product">
+											</div>
+											
+										</div>
+									</div>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div>
+<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-add">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Add Category</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="add" action="add/category" method="POST" role="form" style="display: block;" >
+									
+									
+									<!-- <div class="form-group">
+										<input type="text" name="cid" id="cid" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
+									</div> -->
+									<div class="form-group">
+										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="cdesc" id="cdesc" tabindex="1" class="form-control" placeholder="Description" >
+									</div>
+									
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add Category">
+											</div>
+											
+										</div>
+									</div>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div>
+<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-add">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Add Supplier</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="add"  action="add/supplier"method="POST" role="form" style="display: block;" >
+									
+									
+									<div class="form-group">
+										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Supplier Name" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Address" >
+									</div>
+									<div class="form-group">
+										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="Contact" >
+									</div>
+									
+																				
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="add-submit" id="add-submit" tabindex="4" class="form-control btn btn-add" value="Add Supplier">
 											</div>
 											
 										</div>

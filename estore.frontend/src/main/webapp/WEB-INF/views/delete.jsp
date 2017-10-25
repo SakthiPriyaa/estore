@@ -140,7 +140,7 @@
 						<form id="delete" action="delete" method="POST" role="form" style="display: block;">
 									
 									<div class="form-group">
-										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
+										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Product Id " >
 									</div>
 																					
 																

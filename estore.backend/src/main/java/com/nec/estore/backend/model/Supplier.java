@@ -18,9 +18,9 @@ public class Supplier {
 	@Column(name="sup_name")
 	private String name;
 	@Column(name="sup_address")
-	private String  desc;
+	private String  address;
 	@Column(name="sup_email")
-	private int stock;
+	private int email;
 	@Column(name="sup_contact")
 	private float contact;
 	/*@ForeignKey(name="prod_id")
@@ -37,17 +37,18 @@ public class Supplier {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDesc() {
-		return desc;
+	
+	public String getAddress() {
+		return address;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public int getStock() {
-		return stock;
+	public int getEmail() {
+		return email;
 	}
-	public void setStock(int stock) {
-		this.stock = stock;
+	public void setEmail(int email) {
+		this.email = email;
 	}
 	public float getContact() {
 		return contact;

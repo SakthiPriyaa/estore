@@ -1,8 +1,8 @@
 package estore.frontend.controller;
 
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +36,13 @@ public class ProductController {
 	}
 	@RequestMapping(value="/myproducts" , method=RequestMethod.GET)
 	public ModelAndView myProducts() {
+		ModelAndView mv=new ModelAndView ("myproducts");
+		List<Product> products=productDao.findAll();
+		mv.getModelMap().addAttribute("products", products);
+		return mv;
+	}
+	@RequestMapping(value="/myproducts" , method=RequestMethod.POST)
+	public ModelAndView viewMyProducts() {
 		ModelAndView mv=new ModelAndView ("myproducts");
 		List<Product> products=productDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
