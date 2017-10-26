@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@page isELIgnored="false" %>
 <%@include file="header.jsp"%>
 	<style>
 	body{
@@ -89,6 +90,12 @@
 </style>
 <body>
 <%@include file="supplierheader.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- <sql:setDataSource var="ds" driver="org.h2.Driver" url="jdbc:h2:tcp://localhost/~/test" user="sa" password=""/>
+<sql:query dataSource="${ds}" var="result"> //ref  defined 'ds'
+    SELECT cat_id,cat_name from Categories;
+</sql:query>
+ --%>
 
 <div class="container">
     	<div class="row">
@@ -115,6 +122,18 @@
 									<div class="form-group">
 										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
+									<div class="form-group">  
+ 										 <select   class="form-control" id="cname" tabindex="1" placeholder="Select Category">
+ 										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
+    																			<option id="2" value="Runner Games">Runner Games</option>
+    																			<option id="3" value="Thriller Games">Thriller Games</option>
+    																			<option id="4" value="Cookery">Cookery</option> -->
+    									 <c:forEach items="${categories}" var="c">
+      									<option value="${c.cname}">${c.cname}</option>
+										</c:forEach>
+    									</select>
+    								</div>
+								
 									<div class="form-group">
 										<input type="text" name="pdesc" id="pdesc" tabindex="1" class="form-control" placeholder="Description" >
 									</div>

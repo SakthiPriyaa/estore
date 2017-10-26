@@ -30,7 +30,7 @@ public class SuppilerController{
 	private CategoryDao categoryDao;
 	@Autowired
 	private SupplierDao supplierDao;
-	
+		
 	@RequestMapping(value="/stock" , method=RequestMethod.GET)
 	public ModelAndView myProducts() {
 		ModelAndView mv=new ModelAndView ("stock");
@@ -75,6 +75,7 @@ public class SuppilerController{
 	@RequestMapping(value="/addproduct", method=RequestMethod.GET)
 	public ModelAndView viewAddProduct(){
 		ModelAndView mv=new ModelAndView("add","command",new Product());
+		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
 		//ModelAndView mv1=new ModelAndView("add","command",new Category());
 		return mv;
 		

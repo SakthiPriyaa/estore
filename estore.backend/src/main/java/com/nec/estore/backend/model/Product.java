@@ -18,9 +18,11 @@ public class Product {
 	@Column(name="prod_id")//,unique=true
 	private int pid;
 	@Column(name="sup_id")	
-	private String sid;//,unique=true
+	private int sid;//,unique=true
 	@Column(name="prod_name")
 	private String pname;
+	@Column(name="cat_name")	
+	private String cname;
 	@Column(name="prod_desc")
 	private String  pdesc;
 	@Column(name="prod_stock")
@@ -37,11 +39,17 @@ public class Product {
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	public String getSid() {
+	public int getSid() {
 		return sid;
 	}
-	public void setSid(String sid) {
+	public void setSid(int sid) {
 		this.sid = sid;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 	public String getPimg() {
 		return pimg;
