@@ -88,48 +88,8 @@
 }
 </style>
 <body>
+<%@include file="supplierheader.jsp"%>
 
-<div class="jumbotron">
-  <div class="container text-center">
-	<img src="./resource/images/logo1.jpg" class="img-rounded" alt="NIIT" width="200" height="120">
-    <h1>NIIT E-Commerce Store</h1>      
-    <p>Welcome to the Home of all things NIIT </p>
-  </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"><img src="./resource/images/Capture.jpg" class="img-rounded" alt="NIIT" width="40" height="30"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="stock">Home</a></li>
-		<li class="active"><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a>
-			<ul>
-				<li class="active"><a href="add/product"><span class="glyphicon glyphicon-plus"></span>Add Product</a>
-				<li class="active"><a href="add/category"><span class="glyphicon glyphicon-plus"></span>Add Category</a>
-				<li class="active"><a href="add/supplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a>
-			</ul>
-			
-		</li>
-		<li><a href="update"><span class="glyphicon glyphicon-pencil"></span>Update</a></li>
-		<li><a href="delete"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
-        <li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
-        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
-	</ul>
-    </div>
-  </div>
-</nav>
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
@@ -144,7 +104,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="add"  action="product" method="POST" role="form" style="display: block;" >
+						<form id="add"  action="addproduct" method="POST" role="form" style="display: block;" >
 									
 									<!-- <div class="form-group">
 										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
@@ -196,7 +156,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="add" action="add/category" method="POST" role="form" style="display: block;" >
+						<form id="add" action="addcategory" method="POST" role="form" style="display: block;" >
 									
 									
 									<!-- <div class="form-group">
@@ -237,7 +197,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="add"  action="add/supplier"method="POST" role="form" style="display: block;" >
+						<form id="add"  action="addsupplier" method="POST" role="form" style="display: block;" >
 									
 									
 									<div class="form-group">

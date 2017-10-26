@@ -1,49 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@page isELIgnored="false" %>
 <%@include file="header.jsp"%>
+<%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-	<img src="./resource/images/logo1.jpg" class="img-rounded" alt="NIIT" width="200" height="120">
-    <h1>NIIT E-Commerce Store</h1>      
-    <p>Welcome to the Home of all things NIIT </p>
-  </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"><img src="./resource/images/Capture.jpg" class="img-rounded" alt="NIIT" width="40" height="30"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-		<li><a href="#"><span class="glyphicon glyphicon-plus"></span>Add</a>
-			<ul>
-				<li ><a href="add/product"><span class="glyphicon glyphicon-plus"></span>Add Product</a>
-				<li ><a href="add/category"><span class="glyphicon glyphicon-plus"></span>Add Category</a>
-				<li ><a href="add/supplier"><span class="glyphicon glyphicon-plus"></span>Add Supplier</a>
-			</ul>
-			
-		</li>
-		<li><a href="update"><span class="glyphicon glyphicon-pencil">Update</a></li>
-		<li><a href="delete"><span class="glyphicon glyphicon-trash">Delete</a></li>
-        <li><a href="view"><span class="glyphicon glyphicon-list-alt">My Products</a></li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
-        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
-	</ul>
-    </div>
-  </div>
-</nav>
+<%@include file="supplierheader.jsp"%>
+<div class="container"> 
+  <div class="row">
+  <c:forEach items="${products}" var="p">  
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" id="prod1">${p.pname}</div>
+        <div class="panel-body"><a href="view?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a></div>
+        <div class="panel-footer">Price:${p.pprice}
+			<a href="view?id=${p.pid}" type="button" action="view" method="GET" class="btn btn-warning btn-sm btn-block">View Details<span class="glyphicon glyphicon-list-alt"></span>
+								</a></div>
+      </div>
+    </div></c:forEach></div></div>
 <%@include file="footer.jsp"%>
 
 </body>

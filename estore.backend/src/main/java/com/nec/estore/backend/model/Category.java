@@ -14,7 +14,7 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cat_id")//,unique=true
 	private int cid;
-	@Column(name="cat_name")
+	@Column(name="cat_name",unique=true)
 	private String cname;
 	@Column(name="cat_desc")
 	private String  cdesc;

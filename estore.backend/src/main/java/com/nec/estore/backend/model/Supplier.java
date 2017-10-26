@@ -13,16 +13,16 @@ import javax.persistence.Table;
 public class Supplier {
 	@Id
 	//@GeneratedValue//@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="sup_id")//,unique=true
+	@Column(name="sup_id",unique=true)//,unique=true
 	private String id;
 	@Column(name="sup_name")
 	private String name;
 	@Column(name="sup_address")
 	private String  address;
 	@Column(name="sup_email")
-	private int email;
+	private String email;
 	@Column(name="sup_contact")
-	private float contact;
+	private String contact;
 	/*@ForeignKey(name="prod_id")
 	private String prod_id;*/
 	public String getId() {
@@ -44,17 +44,18 @@ public class Supplier {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(int email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	public float getContact() {
+	public String getContact() {
 		return contact;
 	}
-	public void setContact(float contact) {
+	public void setContact(String contact) {
 		this.contact = contact;
 	}
+	
 
 }

@@ -34,8 +34,8 @@ public class HibernateConfig {
 
 	private Properties getHibernateProperties() {
 		Properties prop = new Properties();
-		prop.put("hibernate.show_sql", "true");//not-a-must
-		prop.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+		prop.put("hibernate.show_sql", "true");//not-a-must For console display
+		prop.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");//To connect with H2 DB
 		prop.put("hibernate.format_sql", "true");//not-a-must		
 		prop.put("hibernate.hbm2ddl.auto", "update");
 		return prop;

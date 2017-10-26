@@ -1,8 +1,6 @@
 package estore.frontend.controller;
 
 import java.util.List;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +39,7 @@ public class ProductController {
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
+	
 	@RequestMapping(value="/myproducts" , method=RequestMethod.POST)
 	public ModelAndView viewMyProducts() {
 		ModelAndView mv=new ModelAndView ("myproducts");

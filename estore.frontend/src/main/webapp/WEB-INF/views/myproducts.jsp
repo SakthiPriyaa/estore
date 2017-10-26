@@ -50,7 +50,7 @@ $(document).ready(function(){
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading" id="prod1">${p.pname}</div>
-        <div class="panel-body"><a href="myprodesc"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a></div>
+        <div class="panel-body"><a href="myprodesc?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a></div>
         <div class="panel-footer">Price:${p.pprice}
 			<a href="myprodesc?id=${p.pid}" type="button" action="myprodesc" method="GET" class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
 								</a></div>
