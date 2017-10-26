@@ -12,9 +12,9 @@ import javax.persistence.Table;
 @Table(name="Suppliers")
 public class Supplier {
 	@Id
-	//@GeneratedValue//@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="sup_id",unique=true)//,unique=true
-	private String id;
+	@GeneratedValue
+	@Column(name="sup_id")
+	private int id;
 	@Column(name="sup_name")
 	private String name;
 	@Column(name="sup_address")
@@ -23,16 +23,15 @@ public class Supplier {
 	private String email;
 	@Column(name="sup_contact")
 	private String contact;
-	/*@ForeignKey(name="prod_id")
-	private String prod_id;*/
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 	public String getName() {
 		return name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public void setName(String name) {
 		this.name = name;

@@ -199,10 +199,10 @@
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add"  action="addsupplier" method="POST" role="form" style="display: block;" >
 									
-									
+									<!-- 
 									<div class="form-group">
 										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
-									</div>
+									</div> -->
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Supplier Name" >
 									</div>
