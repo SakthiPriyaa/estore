@@ -22,5 +22,12 @@ public class CartController {
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
 	}
+	@RequestMapping(value="/cart", method=RequestMethod.GET)
+	public ModelAndView getProductById(Model model,@RequestParam("pid") int pid) {
+		ModelAndView mv=new ModelAndView("cart");
+		Product product =productDao.findById(pid);
+		mv.getModelMap().addAttribute("product", product);
+		return mv;
+	}
 
 }

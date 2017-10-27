@@ -91,11 +91,6 @@
 <body>
 <%@include file="supplierheader.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- <sql:setDataSource var="ds" driver="org.h2.Driver" url="jdbc:h2:tcp://localhost/~/test" user="sa" password=""/>
-<sql:query dataSource="${ds}" var="result"> //ref  defined 'ds'
-    SELECT cat_id,cat_name from Categories;
-</sql:query>
- --%>
 
 <div class="container">
     	<div class="row">
@@ -117,19 +112,26 @@
 										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
 									</div> -->
 									<div class="form-group">
-										<input type="text" name="sid" id="sid" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
+										<select   class="form-control" name="sid" id="sid" tabindex="1" >
+										<option value="" disabled selected> Select SupplierID</option>
+										<c:forEach items="${supplier}" var="sup">
+      									<option value="${sup.id}" selected>${sup.name}</option>
+										</c:forEach>
+    									</select>
+									
 									</div>
 									<div class="form-group">
 										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
 									<div class="form-group">  
- 										 <select   class="form-control" id="cname" tabindex="1" placeholder="Select Category">
+ 										 <select  name="cid" class="form-control" id="cid" tabindex="1" >
  										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
     																			<option id="2" value="Runner Games">Runner Games</option>
     																			<option id="3" value="Thriller Games">Thriller Games</option>
     																			<option id="4" value="Cookery">Cookery</option> -->
-    									 <c:forEach items="${categories}" var="c">
-      									<option value="${c.cname}">${c.cname}</option>
+    									<option value="" disabled selected>Select Product Category</option>										
+    									<c:forEach items="${categories}" var="cat">
+      									<option value="${cat.cid}">${cat.cname}</option>
 										</c:forEach>
     									</select>
     								</div>
@@ -144,7 +146,7 @@
 										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price">
 									</div>
 									<div class="form-group">
-										<input type="file" name="pimg" id="pimg"" tabindex="1" class="form-control" placeholder="Image">
+										<input type="file" name="pimg" id="pimg" tabindex="1" class="form-control" placeholder="Image">
 										
 									</div>
 													

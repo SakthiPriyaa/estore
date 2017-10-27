@@ -11,36 +11,7 @@ body {
 
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>NIIT E-Commerce Store</h1>      
-    <p>Welcome to the Home of all things NIIT </p>
-  </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"><img src="./resource/images/niit-logo.jpg" class="img-rounded" alt="NIIT" width="40" height="30"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="home">Home</a></li>
-        <li><a href="products">Products</a></li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">2</span> </a></li>
-        <li><a href="login"><span class="glyphicon glyphicon-user"></span>LogIn</a></li>
-	</ul>
-    </div>
-  </div>
-</nav>
+<%@include file="loginheader.jsp" %>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-8">
