@@ -50,7 +50,7 @@ public class Product {
 	public Category getCid() {
 		return cid;
 	}
-	public void setCat(Category cid) {
+	public void setCid(Category cid) {
 		this.cid = cid;
 	}
 	public String getPimg() {

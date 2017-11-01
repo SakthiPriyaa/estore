@@ -114,7 +114,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="stock" method="POST" role="form" style="display: block;">									
+						<form id="update" action="update" method="POST" role="form" style="display: block;">									
 									
 									<div class="form-group">
 										<select   class="form-control" name="sid" id="sid" tabindex="1" >								
@@ -135,14 +135,14 @@
 									
 									</div>
 									<div class="form-group">
-										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" value="${product.pname}" >
 									</div>
 									<div class="form-group">  
  										 <select  name="cid" class="form-control" id="cid" tabindex="1" > 										 										
     																			
-    									<%-- <c:forEach items="${categories}" var="cat">
+    									<c:forEach items="${categories}" var="cat">
     										<c:choose>
-    											<c:when test="${cat.cid eq product.cat.id }">
+    											<c:when test="${cat.cid eq product.cid.cid }">
     												<option value="${cat.cid}" selected>${cat.cname}</option>
     											</c:when>
     											<c:otherwise>
@@ -150,7 +150,7 @@
     											</c:otherwise>
     										</c:choose>    									
 										</c:forEach>
-    									</select> --%>
+    									</select>
     									
     								</div>
 								

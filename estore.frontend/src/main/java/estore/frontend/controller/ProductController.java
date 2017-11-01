@@ -89,7 +89,7 @@ public class ProductController {
 		product.setPdesc(request.getParameter("pdesc"));
 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
 		product.setPimg(request.getParameter("pimg"));
-		product.setCat(category);
+		product.setCid(category);
 		product.setSid(supplier);
 		productDao.save(product);
 		ModelAndView mv=new ModelAndView("stock");
@@ -126,7 +126,7 @@ public class ProductController {
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView();
-		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cat")));
+		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 		Product product =new Product();
 		product.setPname(request.getParameter("pname"));
@@ -134,7 +134,7 @@ public class ProductController {
 		product.setPdesc(request.getParameter("pdesc"));
 		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
 		product.setPimg(request.getParameter("pimg"));
-		product.setCat(category);
+		product.setCid(category);
 		product.setSid(supplier);
 		productDao.update(product);
 		mv.getModelMap().addAttribute("stock", productDao.findAll());
