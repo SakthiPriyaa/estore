@@ -2,9 +2,11 @@ package com.nec.estore.backend.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -26,10 +28,8 @@ public class ProductImpl implements ProductDao{
 	
 	public void delete(int pid) {
 		Session session=sessionFactory.openSession();
-		String hql = "DELETE FROM Product P  "  + 
-	             "WHERE P.id ='" + pid +"'" ;
-		Query query = session.createQuery(hql);
-		query.executeUpdate();
+		session.beginTransaction();
+		session.delete(findById(pid));
 		session.getTransaction().commit();
 		session.close();
 		
@@ -40,14 +40,28 @@ public class ProductImpl implements ProductDao{
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(entity);
+		session.saveOrUpdate(entity);
 		session.getTransaction().commit();
 		session.close();
 		
 	}
+	/*return (Product)sessionFactory.openSession().get(Product.class,pid);*/
+	
 
 	public Product findById(int pid) {
-		return (Product)sessionFactory.openSession().get(Product.class,pid);
+		
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		Criteria criteria=session.createCriteria(Product.class);
+		criteria.add(Restrictions.eq("pid",new Integer(pid)));
+		List list=criteria.list();
+		/*session.getTransaction().commit();
+		session.close();*/
+		if(!list.isEmpty()){
+			return (Product)list.get(0);
+		}else{
+			return null;
+		}
 	}
 
 	public List<Product> findAll() {

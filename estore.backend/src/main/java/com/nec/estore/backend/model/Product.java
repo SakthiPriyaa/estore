@@ -1,6 +1,6 @@
 package com.nec.estore.backend.model;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -19,12 +19,12 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="prod_id")//,unique=true
 	private int pid;
-	@ManyToOne(cascade=CascadeType.ALL)	
-	private Supplier sid;//,unique=true
+	@ManyToOne
+	private Supplier sid;
 	@Column(name="prod_name")
 	private String pname;
-	@ManyToOne(cascade=CascadeType.ALL)
-	private Category cat;
+	@ManyToOne
+	private Category cid;
 	@Column(name="prod_desc")
 	private String  pdesc;
 	@Column(name="prod_stock")
@@ -47,11 +47,11 @@ public class Product {
 	public void setSid(Supplier sid) {
 		this.sid = sid;
 	}
-	public Category getCat() {
-		return cat;
+	public Category getCid() {
+		return cid;
 	}
-	public void setCat(Category cat) {
-		this.cat = cat;
+	public void setCat(Category cid) {
+		this.cid = cid;
 	}
 	public String getPimg() {
 		return pimg;

@@ -2,6 +2,7 @@ package com.nec.estore.backend.impl;
 
 import java.util.List;
 
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -11,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.nec.estore.backend.dao.SupplierDao;
-import com.nec.estore.backend.model.Product;
+//import com.nec.estore.backend.model.Product;
 import com.nec.estore.backend.model.Supplier;
 
 @Repository
@@ -42,8 +43,8 @@ public class SupplierImpl implements SupplierDao {
 		Criteria criteria=session.createCriteria(Supplier.class);
 		criteria.add(Restrictions.eq("id",new Integer(id)));
 		List list=criteria.list();
-		session.getTransaction().commit();
-		session.close();
+		/*session.getTransaction().commit();
+		session.close();*/
 		if(!list.isEmpty()){
 			return (Supplier)list.get(0);
 		}else{

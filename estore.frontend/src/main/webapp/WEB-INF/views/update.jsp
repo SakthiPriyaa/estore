@@ -88,8 +88,17 @@
 }
 </style>
 <body>
-
 <%@include file="supplierheader.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!-- <div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Update Products</h4>
+            </div>
+            <div class="modal-body"> -->
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
@@ -106,12 +115,28 @@
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="update" action="stock" method="POST" role="form" style="display: block;">
 									
-									<!-- <div class="form-group">
-										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
-									</div> -->
+									
+									<div class="form-group">
+										<select   class="form-control" name="sid" id="sid" tabindex="1" >
+										<option value="" disabled selected> Select Supplier Name</option>
+										<c:forEach items="${supplier}" var="sup">
+      									<option value="${sup.id}">${sup.name}</option>
+										</c:forEach>
+    									</select>
+									
+									</div>
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
+									<div class="form-group">  
+ 										 <select  name="cid" class="form-control" id="cid" tabindex="1" > 										 										
+    									<option value="" disabled selected>Select Product Category</option>										
+    									<c:forEach items="${categories}" var="cat">
+      									<option value="${cat.cid}">${cat.cname}</option>
+										</c:forEach>
+    									</select>
+    								</div>
+								
 									<div class="form-group">
 										<input type="text" name="desc" id="desc" tabindex="1" class="form-control" placeholder="Description" >
 									</div>
@@ -134,9 +159,9 @@
 								</form>
 </div>
 </div>
-</div></div></div>
+</div></div></div></div>
 </div>
-</div>
+
 
 <%@include file="footer.jsp"%>
 

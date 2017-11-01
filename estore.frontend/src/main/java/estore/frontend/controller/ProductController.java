@@ -1,14 +1,12 @@
 package estore.frontend.controller;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -103,35 +101,44 @@ public class ProductController {
 	
 	
 	@RequestMapping(value="/delete", method=RequestMethod.GET)
-	public ModelAndView viewDelete(){
-		ModelAndView mv=new ModelAndView("delete","command",new Product());
+	public ModelAndView viewDelete(@RequestParam("id") int pid){
+		ModelAndView mv=new ModelAndView("stock","command",new Product());
+		productDao.delete(pid);
+		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
 }
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	 public ModelAndView deleteProduct(HttpServletRequest request, HttpServletResponse response){
-		int pid=Integer.parseInt(request.getParameter("id"));
-		 		//Product product=productDao.delete(id);	
-		 		productDao.delete(pid);
-		 		ModelAndView mv=new ModelAndView("stock");
-		 		return mv;
-	 }
 	
 	
 	
 	
 	
-	@RequestMapping(value="/update", method=RequestMethod.GET)
+	/*@RequestMapping(value="/update", method=RequestMethod.GET)
 	public ModelAndView viewUpdate(){
 		ModelAndView mv=new ModelAndView("update","command",new Product());
+		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
+		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
 		return mv;
 }
 	@RequestMapping(value="/update", method=RequestMethod.POST)
-	 public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView();
+		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cat")));
+		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
+		Product product =new Product();
+		product.setPname(request.getParameter("pname"));
+		product.setPstock(Integer.parseInt(request.getParameter("pstock")));
+		product.setPdesc(request.getParameter("pdesc"));
+		product.setPprice(Float.parseFloat(request.getParameter("pprice"))) ;
+		product.setPimg(request.getParameter("pimg"));
+		product.setCat(category);
+		product.setSid(supplier);
 		productDao.update(product);
-		ModelAndView mv=new ModelAndView("stock");
+		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
+		
 	 }
-	
+	*/
 	
 	
 

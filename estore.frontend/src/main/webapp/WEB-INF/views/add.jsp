@@ -107,15 +107,12 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add"  action="addproduct" method="POST" role="form" style="display: block;" >
-									
-									<!-- <div class="form-group">
-										<input type="text" name="pid" id="pid" tabindex="1" class="form-control" placeholder="Product Id  Ex:'P_xxx'" >
-									</div> -->
+																		
 									<div class="form-group">
 										<select   class="form-control" name="sid" id="sid" tabindex="1" >
-										<option value="" disabled selected> Select SupplierID</option>
+										<option value="" disabled selected> Select Supplier Name</option>
 										<c:forEach items="${supplier}" var="sup">
-      									<option value="${sup.id}" selected>${sup.name}</option>
+      									<option value="${sup.id}">${sup.name}</option>
 										</c:forEach>
     									</select>
 									
@@ -124,11 +121,7 @@
 										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
 									<div class="form-group">  
- 										 <select  name="cid" class="form-control" id="cid" tabindex="1" >
- 										 										<!-- <option id="1" value="Puzzles">Puzzles</option>
-    																			<option id="2" value="Runner Games">Runner Games</option>
-    																			<option id="3" value="Thriller Games">Thriller Games</option>
-    																			<option id="4" value="Cookery">Cookery</option> -->
+ 										 <select  name="cid" class="form-control" id="cid" tabindex="1" > 										 										
     									<option value="" disabled selected>Select Product Category</option>										
     									<c:forEach items="${categories}" var="cat">
       									<option value="${cat.cid}">${cat.cname}</option>
@@ -180,9 +173,6 @@
 						<form id="add" action="addcategory" method="POST" role="form" style="display: block;" >
 									
 									
-									<!-- <div class="form-group">
-										<input type="text" name="cid" id="cid" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
-									</div> -->
 									<div class="form-group">
 										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" >
 									</div>
@@ -220,10 +210,7 @@
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="add"  action="addsupplier" method="POST" role="form" style="display: block;" >
 									
-									<!-- 
-									<div class="form-group">
-										<input type="text" name="id" id="id" tabindex="1" class="form-control" placeholder="Supplier Id  Ex:'S_xxx'" >
-									</div> -->
+									
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Supplier Name" >
 									</div>
