@@ -90,6 +90,7 @@
 <body>
 <%@include file="supplierheader.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page isELIgnored="false" %>
 
 <!-- <div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -113,40 +114,59 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="stock" method="POST" role="form" style="display: block;">
-									
+						<form id="update" action="stock" method="POST" role="form" style="display: block;">									
 									
 									<div class="form-group">
-										<select   class="form-control" name="sid" id="sid" tabindex="1" >
-										<option value="" disabled selected> Select Supplier Name</option>
+										<select   class="form-control" name="sid" id="sid" tabindex="1" >								
+										
 										<c:forEach items="${supplier}" var="sup">
-      									<option value="${sup.id}">${sup.name}</option>
+										<c:choose>
+											<c:when test="${sup.id eq product.sid.id}">
+												<option value="${sup.id}" selected="selected">${sup.name}</option>
+											</c:when>
+											<c:otherwise>
+												<option value="${sup.id}">${sup.name}</option>
+											</c:otherwise>											
+										</c:choose>
+										
+										
 										</c:forEach>
     									</select>
 									
 									</div>
 									<div class="form-group">
-										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Product Name" >
+										<input type="text" name="pname" id="pname" tabindex="1" class="form-control" placeholder="Product Name" >
 									</div>
 									<div class="form-group">  
  										 <select  name="cid" class="form-control" id="cid" tabindex="1" > 										 										
-    									<option value="" disabled selected>Select Product Category</option>										
-    									<c:forEach items="${categories}" var="cat">
-      									<option value="${cat.cid}">${cat.cname}</option>
+    																			
+    									<%-- <c:forEach items="${categories}" var="cat">
+    										<c:choose>
+    											<c:when test="${cat.cid eq product.cat.id }">
+    												<option value="${cat.cid}" selected>${cat.cname}</option>
+    											</c:when>
+    											<c:otherwise>
+    												<option value="${cat.cid}">${cat.cname}</option>
+    											</c:otherwise>
+    										</c:choose>    									
 										</c:forEach>
-    									</select>
+    									</select> --%>
+    									
     								</div>
 								
 									<div class="form-group">
-										<input type="text" name="desc" id="desc" tabindex="1" class="form-control" placeholder="Description" >
+										<input type="text" name="pdesc" id="pdesc" tabindex="1" class="form-control" placeholder="Description" value="${product.pdesc}" >
 									</div>
 									<div class="form-group">
-										<input type="text" name="stock" id="stock" tabindex="1" class="form-control" placeholder="Stock" >
+										<input type="text" name="pstock" id="pstock" tabindex="1" class="form-control" placeholder="Stock"  value="${product.pstock}">
 									</div>
 									<div class="form-group">
-										<input type="text" name="price" id="price" tabindex="1" class="form-control" placeholder="Price">
+										<input type="text" name="pprice" id="pprice" tabindex="1" class="form-control" placeholder="Price"  value="${product.pprice}">
 									</div>
-													
+									<div class="form-group">
+										<input type="file" name="pimg" id="pimg" tabindex="1" class="form-control" placeholder="Image" value="${product.pimg}">
+										
+									</div>				
 																
 									<div class="form-group">
 										<div class="row">

@@ -3,12 +3,7 @@
 <%@include file="header.jsp" %>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>NIIT E-Commerce Store</h1>      
-    <p>Welcome to the Home of all things NIIT </p>
-  </div>
-</div>
+
 
 <%@include file="loginheader.jsp" %>
 <div class="container">    
@@ -36,7 +31,7 @@
 			role="button" class="btn btn-success btn-sm btn-block">
 	<span class="glyphicon glyphicon-share-alt"></span>Continue Shopping
 	</a></div>
-      
+    </div>  
 </div>
 </div>
 <%@include file="footer.jsp" %>

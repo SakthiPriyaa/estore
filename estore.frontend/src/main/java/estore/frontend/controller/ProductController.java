@@ -112,13 +112,16 @@ public class ProductController {
 	
 	
 	
-	/*@RequestMapping(value="/update", method=RequestMethod.GET)
-	public ModelAndView viewUpdate(){
-		ModelAndView mv=new ModelAndView("update","command",new Product());
+	@RequestMapping(value="/update", method=RequestMethod.GET)
+	public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
+		ModelAndView mv=new ModelAndView("update");
+		Product product=productDao.findById(pid);
+		mv.getModelMap().addAttribute("product", product);
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
 		mv.getModelMap().addAttribute("supplier", supplierDao.findAll());
 		return mv;
 }
+	
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
@@ -138,7 +141,7 @@ public class ProductController {
 		return mv;
 		
 	 }
-	*/
+	
 	
 	
 
