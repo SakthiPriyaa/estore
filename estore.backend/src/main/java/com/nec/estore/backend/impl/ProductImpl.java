@@ -40,7 +40,7 @@ public class ProductImpl implements ProductDao{
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
-		session.update(entity);
+		session.saveOrUpdate(entity);
 		session.getTransaction().commit();
 		session.close();
 		

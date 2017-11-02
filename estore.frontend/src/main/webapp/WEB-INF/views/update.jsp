@@ -114,7 +114,8 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="update" method="POST" role="form" style="display: block;">									
+						<form id="update" action="update" method="POST" role="form" style="display: block;">
+						<input type="hidden" name="pid" value="${product.pid}" />									
 									
 									<div class="form-group">
 										<select   class="form-control" name="sid" id="sid" tabindex="1" >								

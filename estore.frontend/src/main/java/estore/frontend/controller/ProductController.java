@@ -129,6 +129,7 @@ public class ProductController {
 		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 		Product product =new Product();
+		product.setPid(Integer.parseInt(request.getParameter("pid")));
 		product.setPname(request.getParameter("pname"));
 		product.setPstock(Integer.parseInt(request.getParameter("pstock")));
 		product.setPdesc(request.getParameter("pdesc"));
