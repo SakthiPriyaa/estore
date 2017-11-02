@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.nec.estore.backend.dao.CategoryDao;
 import com.nec.estore.backend.dao.ProductDao;
 import com.nec.estore.backend.dao.SupplierDao;
+import com.nec.estore.backend.model.Category;
 import com.nec.estore.backend.model.Product;
 import com.nec.estore.backend.model.Supplier;
 
@@ -23,6 +24,8 @@ public class SuppilerController{
 	private ProductDao productDao;
 	@Autowired
 	private SupplierDao supplierDao;
+	@Autowired
+	private CategoryDao categoryDao;
 	
 	/*Supplier Page-stock*/
 		
@@ -30,7 +33,9 @@ public class SuppilerController{
 	public ModelAndView myProducts() {
 		ModelAndView mv=new ModelAndView ("stock");
 		List<Product> products=productDao.findAll();
+		List<Category> categories=categoryDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
+		mv.getModelMap().addAttribute("categories", categories);
 		return mv;
 	}
 	
@@ -39,6 +44,8 @@ public class SuppilerController{
 		ModelAndView mv=new ModelAndView ("stock");
 		List<Product> products=productDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
+		List<Category> categories=categoryDao.findAll();
+		mv.getModelMap().addAttribute("categories", categories);
 		return mv;
 	}
 	@RequestMapping(value="/view", method=RequestMethod.GET)
@@ -73,7 +80,12 @@ public class SuppilerController{
 	 }	
 	
 	
-	
+	@RequestMapping(value="/update", method=RequestMethod.GET)
+	public ModelAndView viewUpdate(){
+		ModelAndView mv=new ModelAndView("update");
+		return mv;
+		
+}	
 	
 	
 	

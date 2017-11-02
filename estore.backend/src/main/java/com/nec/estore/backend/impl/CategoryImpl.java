@@ -29,12 +29,20 @@ public class CategoryImpl implements CategoryDao{
 	}
 
 	public void delete(int cid) {
-		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(findById(cid));
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 
 	public void update(Category entity) {
-		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(entity);
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 

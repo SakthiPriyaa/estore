@@ -6,34 +6,35 @@
 <body>
 
 <%@include file="supplierheader.jsp"%>
- <div class="row" ><h3>Product Description</h3>
-    <div class="col-sm-4">
+<div class="container"> 
+  <div class="row">  
+    <div class="col-sm-14"> 
       <div class="panel panel-primary">
-        <div class="panel-heading" >${product.pname}</div>
-        <div class="panel-body"><img src="./resource/images/${product.pimg}" class="img-responsive" style="width:100%" height="auto" ></div>
-        <div class="panel-footer">Price:${product.pprice}</div>
-			</div>
-    </div>
-	<div class="col-sm-8">
-	<div class="panel panel-primary">
-        <div class="panel-heading">   Product Description</div>
-        <div class="panel-body"><table class="table table-striped">
-		<tr><td>Product ID</td><td>${product.pid}</td></tr>
-		<tr><td>Description:</td><td>${product.pdesc}<!-- "A journey across space to discover the source of the Neucromorph outbreak" --></td></tr>
-		<tr><td>Stock:</td><td>${product.pstock }</td></tr>
-		<tr><td>Price:</td><td>${product.pprice}</td></tr>
-		</table></div>
-       <%--  <div class="panel-footer"><a href="update?id=${p.pid}" method="GET" role="button" class="btn btn-warning btn-sm btn-block">Edit Item<span class="glyphicon glyphicon-shopping-cart"></span>
-						</div></a> --%>
-	</div>
-	<div class="col-sm-offset-5 col-centered"><a href="stock"
-			role="button" class="btn btn-success btn-sm btn-block">
-	<span class="glyphicon glyphicon-share-alt"></span>Back to Home
-	</a></div>
-      
-</div>
-</div>
-<%@include file="footer.jsp"%>
+      <!-- <div class="col-sm-2 panel-heading">Image</div> -->
+      <div class="col-sm-2 panel-heading">Id</div>
+      <div class="col-sm-2 panel-heading">Name</div>
+      <div class="col-sm-2 panel-heading">Description</div>
+      <div class="col-sm-2 panel-heading">Stock</div>
+      <div class="col-sm-2 panel-heading">Price</div>
+      <div class="col-sm-2 panel-heading">Action</div>
+      </div></div></div>
+      <%-- <a href="view?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a> --%>
+  <div class="row">  
+    <div class="col-sm-12">
+      <c:forEach items="${products}" var="p"> 
+      <div class="col-sm-2 panel-body">${p.pid}</div>
+      <div class="col-sm-2 panel-body">${p.pname}</div>
+      <div class="col-sm-2 panel-body">${p.pdesc}</div>
+      <div class="col-sm-2 panel-body">${p.pstock}</div>
+      <div class="col-sm-2 panel-body">${p.pprice}</div>
+      <div class="col-sm-2 panel-body">
+      <a href="update?id=${p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="delete?id=${p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
+      </div>
+      </c:forEach>
+      </div></div>
+      </div>
+      <%@include file="footer.jsp"%>
 
 </body>
 </html>

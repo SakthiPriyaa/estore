@@ -27,13 +27,21 @@ public class SupplierImpl implements SupplierDao {
 		session.close();
 	}
 
-	public void delete(String id) {
-		// TODO Auto-generated method stub
+	public void delete(int id) {
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(findById(id));
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 
 	public void update(Supplier entity) {
-		// TODO Auto-generated method stub
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(entity);
+		session.getTransaction().commit();
+		session.close();
 		
 	}
 

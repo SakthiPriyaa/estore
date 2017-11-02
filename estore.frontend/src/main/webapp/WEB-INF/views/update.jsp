@@ -114,7 +114,7 @@
 					<div class="panel-body">
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
-						<form id="update" action="update" method="POST" role="form" style="display: block;">
+						<form id="update" action="updateproduct" method="POST" role="form" style="display: block;">
 						<input type="hidden" name="pid" value="${product.pid}" />									
 									
 									<div class="form-group">
@@ -172,7 +172,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6">
-												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update">
+												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update Product">
 											</div>
 											
 										</div>
@@ -183,6 +183,45 @@
 </div></div></div></div>
 </div>
 
+<div class="container">
+    	<div class="row">
+			<div class="col-lg-12">
+					<div class="panel panel-update">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Update Products</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="update" action="updatecategory" method="POST" role="form" style="display: block;" >
+									
+									<input type="hidden" name="cid" value="${category.cid}" />
+									<div class="form-group">
+										<input type="text" name="cname" id="cname" tabindex="1" class="form-control" placeholder="Category Name" value="${category.cname}">
+									</div>
+									<div class="form-group">
+										<input type="text" name="cdesc" id="cdesc" tabindex="1" class="form-control" placeholder="Description" value="${category.cdesc}" >
+									</div>
+									
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update Category">
+											</div>
+											
+										</div>
+									</div>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div></div>
 
 <%@include file="footer.jsp"%>
 

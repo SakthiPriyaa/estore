@@ -100,7 +100,7 @@ public class ProductController {
 	
 	
 	
-	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	@RequestMapping(value="/deleteproduct", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("stock","command",new Product());
 		productDao.delete(pid);
@@ -112,8 +112,8 @@ public class ProductController {
 	
 	
 	
-	@RequestMapping(value="/update", method=RequestMethod.GET)
-	public ModelAndView viewUpdate(Model model,@RequestParam("id") int pid){
+	@RequestMapping(value="/updateproduct", method=RequestMethod.GET)
+	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
 		Product product=productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
@@ -122,10 +122,10 @@ public class ProductController {
 		return mv;
 }
 	
-	@RequestMapping(value="/update", method=RequestMethod.POST)
+	@RequestMapping(value="/updateproduct", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
-		ModelAndView mv=new ModelAndView();
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
 		Supplier supplier=supplierDao.findById(Integer.parseInt(request.getParameter("sid")));
 		Product product =new Product();
@@ -142,6 +142,8 @@ public class ProductController {
 		return mv;
 		
 	 }
+	
+	
 	
 	
 	

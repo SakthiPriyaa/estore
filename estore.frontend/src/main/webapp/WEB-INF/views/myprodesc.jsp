@@ -5,37 +5,7 @@
 <%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>NIIT E-Commerce Store</h1>      
-    <p>Welcome to the Home of all things NIIT </p>
-  </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"><img src="./resource/images/./resource/images/niit-logo.jpg" class="img-rounded" alt="Cinque Terre" width="40" height="30"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="usrhome">Home</a></li>
-        <li class="active"><a href="myproducts">Products</a></li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="mycart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge">2</span> </a></li>
-        <li><a href="home"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
-        
-	</ul>
-    </div>
-  </div>
-</nav>
+<%@include file="logoutheader.jsp"%>
 <!-- <div id="product"> -->
 <!-- <div class="container"> <span class="tagline">  -->  
   <div class="row" ><h3>Product Description</h3>
