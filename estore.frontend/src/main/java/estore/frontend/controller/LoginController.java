@@ -5,6 +5,7 @@ package estore.frontend.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,14 +34,33 @@ public class LoginController {
 		//request.setAttribute("customer", customer );
 		ModelAndView mv=null;
 		if(customer!=null){
-			mv=new ModelAndView("usrhome");
-			//mv.getModelMap().addAttribute("customer", customer);
-		}else{
+			HttpSession session=request.getSession(true);
+			session.setAttribute("name", customer.getName());
+			session.setAttribute("email", customer.getName());
+			
+			if(email=="admin@example.com") {
+				mv=new ModelAndView("stock");
+			}
+			else {
+				mv=new ModelAndView("usrhome");
+			}
+			
+		}
+		else{
 			mv=new ModelAndView("login");		
 			//mv.getModelMap().addAttribute("customer", customer);
 		}			
 		return mv;
 	}
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session=request.getSession(false);
+		if(session!=null)
+		 	session.invalidate();
+		ModelAndView mv=new ModelAndView("home");
+		return mv;
+	}
+	
 	/*@RequestMapping(value="/login", method=RequestMethod.POST)
 	public ModelAndView validate(HttpServletRequest request, HttpServletResponse response){
 		String email=request.getParameter("email");

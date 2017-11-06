@@ -122,7 +122,7 @@
 
 <body class="container-fluid text-center">
 
-<%@include file="loginheader.jsp" %>
+<%@include file="navbar.jsp" %>
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">

@@ -120,13 +120,13 @@
 									<div class="form-group">
 										<select   class="form-control" name="sid" id="sid" tabindex="1" >								
 										
-										<c:forEach items="${supplier}" var="sup">
+										<c:forEach items="${supplier}" var="supl">
 										<c:choose>
-											<c:when test="${sup.id eq product.sid.id}">
-												<option value="${sup.id}" selected="selected">${sup.name}</option>
+											<c:when test="${supl.id eq product.sid.id}">
+												<option value="${supl.id}" selected="selected">${supl.name}</option>
 											</c:when>
 											<c:otherwise>
-												<option value="${sup.id}">${sup.name}</option>
+												<option value="${supl.id}">${supl.name}</option>
 											</c:otherwise>											
 										</c:choose>
 										
@@ -213,6 +213,50 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update Category">
+											</div>
+											
+										</div>
+									</div>
+								</form>
+</div>
+</div>
+</div></div></div>
+</div></div>
+<div class="container">
+    	<div class="row">
+			<div class="col-lg-12">
+					<div class="panel panel-update">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<a href="#" class="active" >Update Supplier</a>
+							</div>
+						</div>
+					</div>	
+					<div class="panel-body">
+    	<div class="row">
+			<div class="col-md-6 col-sm-offset-3">
+						<form id="update" action="updatesupplier" method="POST" role="form" style="display: block;" >
+									
+									<input type="hidden" name="id" value="${suppliers.id}" />
+									<div class="form-group">
+										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Supplier Name" value="${suppliers.name}">
+									</div>
+									<div class="form-group">
+										<input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Supplier Email" value="${suppliers.email}" >
+									</div>
+									<div class="form-group">
+										<input type="text" name="address" id="address" tabindex="1" class="form-control" placeholder="Supplier Address" value="${suppliers.address}">
+									</div>
+									<div class="form-group">
+										<input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="Supplier Contact" value="${suppliers.contact}" >
+									</div>
+													
+																
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="submit" name="update-submit" id="update-submit" tabindex="4" class="form-control btn btn-update" value="Update Supplier">
 											</div>
 											
 										</div>

@@ -70,9 +70,5 @@ public class CustomerImpl implements CustomerDao {
 			return false;	
 	}
 
-	public Customer findByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

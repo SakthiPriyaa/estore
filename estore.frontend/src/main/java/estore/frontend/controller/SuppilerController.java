@@ -2,6 +2,10 @@ package estore.frontend.controller;
 
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,8 +38,10 @@ public class SuppilerController{
 		ModelAndView mv=new ModelAndView ("stock");
 		List<Product> products=productDao.findAll();
 		List<Category> categories=categoryDao.findAll();
+		List<Supplier> suppliers=supplierDao.findAll();
 		mv.getModelMap().addAttribute("products", products);
 		mv.getModelMap().addAttribute("categories", categories);
+		mv.getModelMap().addAttribute("suppliers", suppliers);
 		return mv;
 	}
 	
@@ -46,6 +52,8 @@ public class SuppilerController{
 		mv.getModelMap().addAttribute("products", products);
 		List<Category> categories=categoryDao.findAll();
 		mv.getModelMap().addAttribute("categories", categories);
+		List<Supplier> suppliers=supplierDao.findAll();
+		mv.getModelMap().addAttribute("suppliers", suppliers);
 		return mv;
 	}
 	@RequestMapping(value="/view", method=RequestMethod.GET)
@@ -85,9 +93,39 @@ public class SuppilerController{
 		ModelAndView mv=new ModelAndView("update");
 		return mv;
 		
-}	
+	}	
 	
+	@RequestMapping(value="/updatesupplier", method=RequestMethod.GET)
+	public ModelAndView viewUpdateSupplier(Model model,@RequestParam("id") int id){
+		ModelAndView mv=new ModelAndView("update");
+		Supplier supplier=supplierDao.findById(id);
+		mv.getModelMap().addAttribute("suppliers", supplier);
+		return mv;
+	}
 	
+	@RequestMapping(value="/updatesupplier", method=RequestMethod.POST)
+	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
+	public ModelAndView updateSupplier(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mv=new ModelAndView("redirect:stock");
+		Supplier supplier=new Supplier();
+		supplier.setId(Integer.parseInt(request.getParameter("id")));
+		supplier.setName(request.getParameter("name"));
+		supplier.setEmail(request.getParameter("email"));
+		supplier.setAddress(request.getParameter("address"));
+		supplier.setContact(request.getParameter("contact"));
+		supplierDao.update(supplier);
+		mv.getModelMap().addAttribute("stock", supplierDao.findAll());
+		return mv;
+		
+	 }
+	
+	@RequestMapping(value="/deletesupplier", method=RequestMethod.GET)
+	public ModelAndView viewDelete(@RequestParam("id") int id){
+		ModelAndView mv=new ModelAndView("stock","command",new Supplier());
+		supplierDao.delete(id);
+		mv.getModelMap().addAttribute("stock", supplierDao.findAll());
+		return mv;
+	}
 	
 	
 	

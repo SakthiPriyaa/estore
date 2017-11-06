@@ -7,7 +7,7 @@
 
 <body>
 
-<%@include file="logoutheader.jsp"%>
+<%@include file="navbar.jsp"%>
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover(); 

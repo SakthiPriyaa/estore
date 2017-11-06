@@ -3,6 +3,7 @@ package com.nec.estore.backend.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="Customers")
 public class Customer {
 	@Id
-	@GeneratedValue//@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="cust_id")
 	private int id;
 	@Column(name="cust_name")
@@ -25,7 +26,15 @@ public class Customer {
 	private String password;
 	@Column(name="cust_confirmpassword")
 	private String confirmpassword;
+	@Column(name="cust_role")
+	private String role;
 	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public int getId() {
 		return id;
 	}

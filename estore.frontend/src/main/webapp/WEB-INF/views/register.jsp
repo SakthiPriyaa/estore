@@ -122,7 +122,7 @@
 
 <body class="container-fluid text-center">
 
-<%@include file="loginheader.jsp" %>
+<%@include file="navbar.jsp" %>
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
@@ -138,6 +138,9 @@
     	<div class="row">
 			<div class="col-md-6 col-sm-offset-3">
 						<form id="register" action="register" method="POST" role="form" style="display: block;">
+									
+										
+									
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>

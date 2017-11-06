@@ -3,7 +3,7 @@
 <%@include file="header.jsp" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="spring"%>
 <body>
-<%@include file="loginheader.jsp" %>
+<%@include file="navbar.jsp" %>
 
 <!-- <script>
 $(document).ready(function(){

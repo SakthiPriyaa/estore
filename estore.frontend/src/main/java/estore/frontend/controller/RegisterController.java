@@ -1,6 +1,9 @@
 package estore.frontend.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,7 +25,15 @@ public class RegisterController {
 		return mv;
 	}
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	 public ModelAndView register(@ModelAttribute("customer") Customer customer){
+	 public ModelAndView register(HttpServletRequest request,HttpServletResponse response){
+		Customer customer=new Customer();
+		customer.setName(request.getParameter("name"));
+		customer.setEmail(request.getParameter("email"));
+		customer.setAddress(request.getParameter("address"));
+		customer.setContact(request.getParameter("contact"));
+		customer.setPassword(request.getParameter("password"));
+		customer.setConfirmpassword(request.getParameter("confirmpassword"));
+		customer.setRole("ROLE_USER");
 		ModelAndView mv=new ModelAndView("login");
 		customerDao.save(customer);
 		return mv;

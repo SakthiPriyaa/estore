@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@include file="header.jsp"%>
-<%@include file="logoutheader.jsp"%>
+
+<%@include file="navbar.jsp"%>
 <body>
-
-
 
 <div class="container">    
   <div class="row">

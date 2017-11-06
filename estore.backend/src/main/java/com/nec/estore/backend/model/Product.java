@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="prod_id")//,unique=true
+	@Column(name="prod_id")
 	private int pid;
 	@ManyToOne
 	private Supplier sid;

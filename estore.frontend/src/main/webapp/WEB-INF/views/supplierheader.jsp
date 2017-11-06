@@ -27,7 +27,7 @@
 			</ul>
 			
 		</li>
-		<li><a href="view"><span class="glyphicon glyphicon-list-alt"></span>My Products</a></li>
+		<li><a href="stock"><span class="glyphicon glyphicon-list-alt"></span>Products/Categories/Suppliers</a></li>
 		
       </ul>
       <ul class="nav navbar-nav navbar-right">

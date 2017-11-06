@@ -23,12 +23,13 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="register"><span class="glyphicon glyphicon-pencil"></span>Register</a></li>
-        <li><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>LogIn</a>
+        <!-- <li><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>LogIn</a>
         	<ul class="dropdown-menu">
 				<li><a href="login">User</a>
 				<li><a href="stock">Supplier</a>
 			</ul>
-        </li>
+        </li> -->
+        <li><a href="login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
         <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge"></span></a></li>
       </ul>
     </div>

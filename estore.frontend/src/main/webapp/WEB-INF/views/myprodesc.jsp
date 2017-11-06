@@ -5,7 +5,7 @@
 <%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <body>
 
-<%@include file="logoutheader.jsp"%>
+<%@include file="navbar.jsp"%>
 <!-- <div id="product"> -->
 <!-- <div class="container"> <span class="tagline">  -->  
   <div class="row" ><h3>Product Description</h3>
