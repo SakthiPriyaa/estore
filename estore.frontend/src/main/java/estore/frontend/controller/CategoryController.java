@@ -20,20 +20,20 @@ import com.nec.estore.backend.model.Product;
 public class CategoryController {
 	@Autowired
 	private CategoryDao categoryDao;
-	@RequestMapping(value="/addcategory", method=RequestMethod.GET)
+	@RequestMapping(value="admin/addcategory", method=RequestMethod.GET)
 	public ModelAndView viewAddCategory(){
 		ModelAndView mv=new ModelAndView("add","command",new Category());
 		//ModelAndView mv1=new ModelAndView("add","command",new Category());
 		return mv;
 		
 }
-	@RequestMapping(value="/addcategory", method=RequestMethod.POST)
+	@RequestMapping(value="admin/addcategory", method=RequestMethod.POST)
 	 public ModelAndView addCategory(@ModelAttribute("category") Category category){
 		categoryDao.save(category);
-		ModelAndView mv=new ModelAndView("stock");
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		return mv;
 	 }
-	@RequestMapping(value="/updatecategory", method=RequestMethod.GET)
+	@RequestMapping(value="admin/updatecategory", method=RequestMethod.GET)
 	public ModelAndView viewUpdateCategory(Model model,@RequestParam("id") int cid){
 		ModelAndView mv=new ModelAndView("update");
 		Category category=categoryDao.findById(cid);
@@ -41,7 +41,7 @@ public class CategoryController {
 		return mv;
 }
 	
-	@RequestMapping(value="/updatecategory", method=RequestMethod.POST)
+	@RequestMapping(value="admin/updatecategory", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateCategory(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:stock");
@@ -54,9 +54,9 @@ public class CategoryController {
 		return mv;
 		
 	 }
-	@RequestMapping(value="/deletecategory", method=RequestMethod.GET)
+	@RequestMapping(value="admin/deletecategory", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int cid){
-		ModelAndView mv=new ModelAndView("stock","command",new Category());
+		ModelAndView mv=new ModelAndView("redirect:stock","command",new Category());
 		categoryDao.delete(cid);
 		mv.getModelMap().addAttribute("stock", categoryDao.findAll());
 		return mv;

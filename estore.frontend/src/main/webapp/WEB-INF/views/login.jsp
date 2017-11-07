@@ -119,10 +119,10 @@
 </style>
 
 
-
+<%@include file="navbar.jsp" %>
 <body class="container-fluid text-center">
 
-<%@include file="navbar.jsp" %>
+
 <div class="container">
     	<div class="row">
 			<div class="col-lg-12">
@@ -155,6 +155,7 @@
 											
 										</div>
 									</div>
+									<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
 								</form>
 </div>
 </div>

@@ -36,18 +36,18 @@ public class LoginController {
 		if(customer!=null){
 			HttpSession session=request.getSession(true);
 			session.setAttribute("name", customer.getName());
-			session.setAttribute("email", customer.getName());
+			session.setAttribute("email", customer.getEmail());
 			
-			if(email=="admin@example.com") {
-				mv=new ModelAndView("stock");
+			if(email=="adminsakthi@example.com") {
+				mv=new ModelAndView("redirect:stock");
 			}
 			else {
-				mv=new ModelAndView("usrhome");
+				mv=new ModelAndView("redirect:home");
 			}
 			
 		}
 		else{
-			mv=new ModelAndView("login");		
+			mv=new ModelAndView("redirect:login");		
 			//mv.getModelMap().addAttribute("customer", customer);
 		}			
 		return mv;

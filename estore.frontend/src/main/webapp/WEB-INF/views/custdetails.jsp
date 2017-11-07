@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@include file="header.jsp" %>
+<%@include file="navbar.jsp"%>
 <body>
-
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>NIIT E-Commerce Store</h1>      
-    <p>Welcome to the Home of all things NIIT </p>
-  </div>
-</div>
-
-<%@include file="logoutheader.jsp"%>
-
 <div class="container">
 	<div class="row">
 		 <form class="form-horizontal">

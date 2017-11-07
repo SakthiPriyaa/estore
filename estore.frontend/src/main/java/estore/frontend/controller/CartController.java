@@ -15,19 +15,19 @@ import com.nec.estore.backend.model.Product;
 public class CartController {
 	@Autowired
 	private ProductDao productDao;
-	@RequestMapping(value="/mycart", method=RequestMethod.GET)
-	public ModelAndView getMyProductById(Model model,@RequestParam("pid") int pid) {
-		ModelAndView mv=new ModelAndView("mycart");
-		Product product =productDao.findById(pid);
-		mv.getModelMap().addAttribute("product", product);
-		return mv;
-	}
-	@RequestMapping(value="/cart", method=RequestMethod.GET)
-	public ModelAndView getProductById(Model model,@RequestParam("pid") int pid) {
+	/*@RequestMapping(value="/cart", method=RequestMethod.GET)
+	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid) {
 		ModelAndView mv=new ModelAndView("cart");
 		Product product =productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
-	}
+	}*/
+	/*@RequestMapping(value="/mycart", method=RequestMethod.GET)
+	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {
+		ModelAndView mv=new ModelAndView("mycart");
+		Product product =productDao.findById(pid);
+		mv.getModelMap().addAttribute("product", product);
+		return mv;
+	}*/
 
 }

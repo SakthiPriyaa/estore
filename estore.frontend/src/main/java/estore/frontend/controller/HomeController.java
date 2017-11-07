@@ -22,9 +22,9 @@ public class HomeController {
 		ModelAndView mv=new ModelAndView("home");
 		return mv;
 	}
-	@RequestMapping(value="/usrhome", method=RequestMethod.GET)
+	@RequestMapping(value="admin/home", method=RequestMethod.GET)
 	public ModelAndView showMyHome(){
-		ModelAndView mv=new ModelAndView("usrhome");
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		return mv;
 	}
 	

@@ -2,13 +2,12 @@
 <html lang="en">
 <%@page isELIgnored="false" %>
 <%@include file="header.jsp"%>
-<b>Welcome! ${sessionScope['name']}</b>
+
 <%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <body>
 
 <%@include file="navbar.jsp"%>
-<div class="container"> 
-				
+<div class="container"> 				
   <div class="row">  
     <div class="col-sm-12">
       <div class="panel panel-primary">
@@ -84,6 +83,10 @@
       <a href="updatesupplier?id=${sup.id}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="deletesupplier?id=${sup.id}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
+      <div class="alert alert-success alert-dismissable">
+ 			 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  			<strong>Success!</strong> Indicates a successful or positive action.
+	</div>
       </c:forEach>
       </div></div>
 </div>

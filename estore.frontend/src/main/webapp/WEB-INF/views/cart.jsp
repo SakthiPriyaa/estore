@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@include file="header.jsp" %>
-
-    <style>
-    
-body {
-	margin-top: 20px;
-}
-  </style>
-
 <body>
 
-<%@include file="loginheader.jsp" %>
+<%@include file="navbar.jsp"%>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-8">
@@ -22,7 +14,7 @@ body {
 							<div class="col-xs-6">
 								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
 							</div>
-							<div class="col-xs-6"><a href="products">
+							<div class="col-xs-6"><a href="myproducts">
 								<button type="button" class="btn btn-primary btn-sm btn-block" >
 									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
 								</button></a>
@@ -78,7 +70,7 @@ body {
 							<div class="col-xs-9">
 								<h6 class="text-right">Added items?</h6>
 							</div>
-							<div class="col-xs-3"><a href="cart">
+							<div class="col-xs-3"><a href="mycart">
 								<button type="button" class="btn btn-default btn-sm btn-block">
 									Update cart
 								</button></a>
@@ -92,7 +84,7 @@ body {
 							<h4 class="text-right">Total <strong>$50.00</strong></h4>
 						</div>
 						<div class="col-xs-3">
-							<a href="login" type="button" class="btn btn-success btn-block">
+							<a href="custdetails" type="button" class="btn btn-success btn-block">
 								Pay
 							</a>
 						</div>

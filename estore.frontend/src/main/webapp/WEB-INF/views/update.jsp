@@ -88,7 +88,7 @@
 }
 </style>
 <body>
-<%@include file="supplierheader.jsp"%>
+<%@include file="navbar.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page isELIgnored="false" %>
 

@@ -20,6 +20,7 @@ import com.nec.estore.backend.model.Product;
 import com.nec.estore.backend.model.Supplier;
 
 @Controller
+
 public class ProductController {
 	
 	@Autowired
@@ -36,14 +37,21 @@ public class ProductController {
 		mv.getModelMap().addAttribute("products", products);
 		return mv;
 	}
+	@RequestMapping(value="/products" , method=RequestMethod.POST)
+	public ModelAndView viewProducts() {
+		ModelAndView mv=new ModelAndView ("products");
+		List<Product> products=productDao.findAll();
+		mv.getModelMap().addAttribute("products", products);
+		return mv;
+	}
 	@RequestMapping(value="/prodesc", method=RequestMethod.GET)
-	public ModelAndView getMyProductById(Model model,@RequestParam("pid") int pid) {
+	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid) {
 		ModelAndView mv=new ModelAndView("prodesc");
 		Product product =productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
 	}
-	@RequestMapping(value="/myproducts" , method=RequestMethod.GET)
+	/*@RequestMapping(value="/myproducts" , method=RequestMethod.GET)
 	public ModelAndView myProducts() {
 		ModelAndView mv=new ModelAndView ("myproducts");
 		List<Product> products=productDao.findAll();
@@ -64,11 +72,11 @@ public class ProductController {
 		Product product =productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
-	}
+	}*/
 	
 	/*Add Products*/
 	
-	@RequestMapping(value="/addproduct", method=RequestMethod.GET)
+	@RequestMapping(value="admin/addproduct", method=RequestMethod.GET)
 	public ModelAndView viewAddProduct(){
 		ModelAndView mv=new ModelAndView("add","command",new Product());
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
@@ -78,7 +86,7 @@ public class ProductController {
 		return mv;
 		
 }
-	@RequestMapping(value="/addproduct", method=RequestMethod.POST)
+	@RequestMapping(value="admin/addproduct", method=RequestMethod.POST)
 	// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
 	 public ModelAndView addProduct(HttpServletRequest request, HttpServletResponse response){
 		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
@@ -100,9 +108,9 @@ public class ProductController {
 	
 	
 	
-	@RequestMapping(value="/deleteproduct", method=RequestMethod.GET)
+	@RequestMapping(value="admin/deleteproduct", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int pid){
-		ModelAndView mv=new ModelAndView("stock","command",new Product());
+		ModelAndView mv=new ModelAndView("redirect:stock","command",new Product());
 		productDao.delete(pid);
 		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
@@ -112,7 +120,7 @@ public class ProductController {
 	
 	
 	
-	@RequestMapping(value="/updateproduct", method=RequestMethod.GET)
+	@RequestMapping(value="admin/updateproduct", method=RequestMethod.GET)
 	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
 		Product product=productDao.findById(pid);
@@ -122,7 +130,7 @@ public class ProductController {
 		return mv;
 }
 	
-	@RequestMapping(value="/updateproduct", method=RequestMethod.POST)
+	@RequestMapping(value="admin/updateproduct", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:stock");

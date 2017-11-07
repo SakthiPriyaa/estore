@@ -3,7 +3,7 @@
 <%@include file="header.jsp"%>
 <body>
 
-<%@include file="supplierheader.jsp"%>
+<%@include file="navbar.jsp"%>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-8">
