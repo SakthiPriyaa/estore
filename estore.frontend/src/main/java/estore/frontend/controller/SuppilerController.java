@@ -23,7 +23,6 @@ import com.nec.estore.backend.model.Product;
 import com.nec.estore.backend.model.Supplier;
 
 @Controller
-@RequestMapping("/admin")
 public class SuppilerController{
 	@Autowired
 	private ProductDao productDao;
@@ -47,7 +46,7 @@ public class SuppilerController{
 	}
 	
 	
-	@RequestMapping(value="/admin/stock" , method=RequestMethod.GET)
+	/*@RequestMapping(value="/admin/stock" , method=RequestMethod.GET)
 	public ModelAndView myStocks() {
 		ModelAndView mv=new ModelAndView ("stock");
 		List<Product> products=productDao.findAll();
@@ -123,7 +122,7 @@ public class SuppilerController{
 		supplierDao.delete(id);
 		mv.getModelMap().addAttribute("stock", supplierDao.findAll());
 		return mv;
-	}
+	}*/
 	
 	
 	

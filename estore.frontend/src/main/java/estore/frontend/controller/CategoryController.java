@@ -20,7 +20,7 @@ import com.nec.estore.backend.model.Product;
 public class CategoryController {
 	@Autowired
 	private CategoryDao categoryDao;
-	@RequestMapping(value="/admin/addcategory", method=RequestMethod.GET)
+	/*@RequestMapping(value="/admin/addcategory", method=RequestMethod.GET)
 	public ModelAndView viewAddCategory(){
 		ModelAndView mv=new ModelAndView("add","command",new Category());
 		//ModelAndView mv1=new ModelAndView("add","command",new Category());
@@ -60,6 +60,6 @@ public class CategoryController {
 		categoryDao.delete(cid);
 		mv.getModelMap().addAttribute("stock", categoryDao.findAll());
 		return mv;
-}
+}*/
 	
 }

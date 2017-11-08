@@ -7,7 +7,14 @@
 <body>
 
 <%@include file="navbar.jsp"%>
-<div class="container"> 				
+<div class="container"> 
+<div class="row">	
+<div  align="center"class="col-sm-4 col-sm-offset-4">
+<div class="panel panel-info">
+<div align="center" class="panel-heading"><b style="font-size:150%;">Products List</b></div>
+</div>
+</div>
+</div>			
   <div class="row">  
     <div class="col-sm-12">
       <div class="panel panel-primary">
@@ -32,11 +39,20 @@
       <a href="updateproduct?id=${p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="deleteproduct?id=${p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
-      </c:forEach>
-      </div></div>
-</div>
+      </c:forEach>      
+      </div>
+      </div>
+</div></div>
 
 <div class="container"> 
+<div class="row">
+<!-- <div class="col-sm-12 panel panel-default"></div>	 -->
+<div  align="center"class="col-sm-4 col-sm-offset-4">
+<div class="panel panel-info">
+<div align="center" class="panel-heading"><b style="font-size:150%;">Categories List</b></div>
+</div>
+</div>
+</div>	
   <div class="row">  
     <div class="col-sm-12"> 
       <div class="panel panel-primary">
@@ -59,7 +75,14 @@
       </c:forEach>
       </div></div>
 </div>
-<div class="container"> 
+<div class="container">
+<div class="row">	
+<div  align="center"class="col-sm-4 col-sm-offset-4">
+<div class="panel panel-info">
+<div align="center" class="panel-heading"><b style="font-size:150%;">Suppliers List</b></div>
+</div>
+</div>
+</div>	 
   <div class="row">  
     <div class="col-sm-12"> 
       <div class="panel panel-primary">

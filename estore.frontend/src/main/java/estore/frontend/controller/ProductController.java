@@ -76,7 +76,7 @@ public class ProductController {
 	
 	/*Add Products*/
 	
-	@RequestMapping(value="/admin/addproduct", method=RequestMethod.GET)
+	/*@RequestMapping(value="/admin/addproduct", method=RequestMethod.GET)
 	public ModelAndView viewAddProduct(){
 		ModelAndView mv=new ModelAndView("add","command",new Product());
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
@@ -149,7 +149,7 @@ public class ProductController {
 		mv.getModelMap().addAttribute("stock", productDao.findAll());
 		return mv;
 		
-	 }
+	 }*/
 	
 	
 	
