@@ -76,7 +76,7 @@ public class ProductController {
 	
 	/*Add Products*/
 	
-	@RequestMapping(value="admin/addproduct", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addproduct", method=RequestMethod.GET)
 	public ModelAndView viewAddProduct(){
 		ModelAndView mv=new ModelAndView("add","command",new Product());
 		mv.getModelMap().addAttribute("categories", categoryDao.findAll());
@@ -86,7 +86,7 @@ public class ProductController {
 		return mv;
 		
 }
-	@RequestMapping(value="admin/addproduct", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addproduct", method=RequestMethod.POST)
 	// public ModelAndView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request){
 	 public ModelAndView addProduct(HttpServletRequest request, HttpServletResponse response){
 		Category category=categoryDao.findById(Integer.parseInt(request.getParameter("cid")));
@@ -108,7 +108,7 @@ public class ProductController {
 	
 	
 	
-	@RequestMapping(value="admin/deleteproduct", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/deleteproduct", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("redirect:stock","command",new Product());
 		productDao.delete(pid);
@@ -120,7 +120,7 @@ public class ProductController {
 	
 	
 	
-	@RequestMapping(value="admin/updateproduct", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateproduct", method=RequestMethod.GET)
 	public ModelAndView viewUpdateProduct(Model model,@RequestParam("id") int pid){
 		ModelAndView mv=new ModelAndView("update");
 		Product product=productDao.findById(pid);
@@ -130,7 +130,7 @@ public class ProductController {
 		return mv;
 }
 	
-	@RequestMapping(value="admin/updateproduct", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updateproduct", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateProduct(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:stock");

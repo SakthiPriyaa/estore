@@ -1,4 +1,4 @@
-<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -9,19 +9,19 @@
 							http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 	<security:http auto-config="true">
-		<security:intercept-url pattern="/product/**" access="ROLE_ADMIN" />
-		<security:intercept-url pattern="/products/**" access="hasRole('ROLE_ADMIN')" />
+		<!-- <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" /> -->
+		<security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
 		
-		<security:form-login login-page="/login" default-target-url="/products/" authentication-failure-url="/login"/>		
+		<security:form-login login-page="/login" default-target-url="/stock/" authentication-failure-url="/failure"/>		
 		<security:logout logout-url="/"/>		
-		<security:csrf disabled="true"/>
+		<!-- <security:csrf disabled="true"/> -->
 	</security:http>
 		<security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
-				<security:user name="Admin" password="admin" authorities="ROLE_ADMIN" />
+				<security:user name="adminsakthi@example.com" password="admin"  authorities="ROLE_ADMIN" />
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
 
-</beans> -->
+</beans>

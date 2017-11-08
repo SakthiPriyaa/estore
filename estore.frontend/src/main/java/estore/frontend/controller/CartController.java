@@ -15,13 +15,13 @@ import com.nec.estore.backend.model.Product;
 public class CartController {
 	@Autowired
 	private ProductDao productDao;
-	/*@RequestMapping(value="/cart", method=RequestMethod.GET)
+	@RequestMapping(value="/cart", method=RequestMethod.GET)
 	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid) {
 		ModelAndView mv=new ModelAndView("cart");
 		Product product =productDao.findById(pid);
 		mv.getModelMap().addAttribute("product", product);
 		return mv;
-	}*/
+	}
 	/*@RequestMapping(value="/mycart", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {
 		ModelAndView mv=new ModelAndView("mycart");

@@ -82,11 +82,12 @@
       <div align="center" class="col-sm-2 panel-body">
       <a href="updatesupplier?id=${sup.id}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="deletesupplier?id=${sup.id}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
+      
       </div>
-      <div class="alert alert-success alert-dismissable">
+      <!-- <div class="alert alert-success alert-dismissable">
  			 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   			<strong>Success!</strong> Indicates a successful or positive action.
-	</div>
+	</div> -->
       </c:forEach>
       </div></div>
 </div>

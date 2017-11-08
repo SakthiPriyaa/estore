@@ -23,7 +23,7 @@
     
       <ul class="nav navbar-nav">
       
-        <c:if test="${sessionScope['name']=='Admin'}">
+        <c:if test="${sessionScope['email']=='adminsakthi@example.com'}">
         <li><a href="stock"><span class="glyphicon glyphicon-shopping-home"></span>AdminHome</a></li>
         <li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>Add<!-- <span class="glyphicon glyphicon-chevron-down"></span> --></a>
 			 <ul class="dropdown-menu">
@@ -35,7 +35,7 @@
 		<!-- <li><a href="stock"><span class="glyphicon glyphicon-list-alt"></span>Products/Categories/Suppliers</a></li> -->
 		 <li><a href="orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
 		</c:if>
-		<c:if test="${sessionScope['name']!='Admin'}">
+		<c:if test="${sessionScope['email']!='adminsakthi@example.com'}">
       <li><a href="home"><span class="glyphicon glyphicon-shopping-home"></span>Home</a></li>
         <li><a href="products">Products</a></li>
         <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge"></span></a></li>
@@ -49,13 +49,13 @@
             		 <!-- <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li> -->
           
  			 <c:choose>	
- 			 <c:when test="${sessionScope['name'] eq null}">
+ 			 <c:when test="${sessionScope['email'] eq null}">
         			<li><a href="register"><span class="glyphicon glyphicon-pencil"></span>Register</a></li>
         			<li><a href="login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
         			 
        			 
         		</c:when>
-				<c:when test="${sessionScope['name'] ne null}">   				          		
+				<c:when test="${sessionScope['email'] ne null}">   				          		
       		  		<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
       		  	</c:when>
       		  	</c:choose>

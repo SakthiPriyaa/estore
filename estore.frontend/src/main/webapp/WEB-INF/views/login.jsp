@@ -140,7 +140,7 @@
 						<form id="login" action="login" method="POST" role="form" style="display: block;">
 									
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Id" value="">
+										<input type="email" name="username" id="email" tabindex="1" class="form-control" placeholder="Email Id" value="">
 									</div>
 																		
 									<div class="form-group">
@@ -155,7 +155,7 @@
 											
 										</div>
 									</div>
-									<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								</form>
 </div>
 </div>

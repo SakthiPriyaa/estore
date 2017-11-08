@@ -35,7 +35,7 @@
   <artifactId>estore.backend</artifactId>
   <version>0.0.1-SNAPSHOT</version>  	
   	</dependency> 
-  <!-- 	<dependency>
+  	<dependency>
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-config</artifactId>
   		<version>4.0.3.RELEASE</version>
@@ -50,7 +50,7 @@
   		<groupId>org.springframework.security</groupId>
   		<artifactId>spring-security-web</artifactId>
   		<version>4.0.3.RELEASE</version>
-  	</dependency>   -->	
+  	</dependency>  	
   </dependencies>
   <build>
     <finalName>estore.frontend</finalName>

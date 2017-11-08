@@ -46,10 +46,10 @@ public class LoginController {
 			}
 			
 		}
-		else{
-			mv=new ModelAndView("redirect:login");		
+		/*else{
+			mv=new ModelAndView("redirect:failure");		
 			//mv.getModelMap().addAttribute("customer", customer);
-		}			
+		}	*/		
 		return mv;
 	}
 	@RequestMapping(value="/logout", method=RequestMethod.GET)
@@ -58,6 +58,11 @@ public class LoginController {
 		if(session!=null)
 		 	session.invalidate();
 		ModelAndView mv=new ModelAndView("home");
+		return mv;
+	}
+	@RequestMapping(value="/failure", method=RequestMethod.GET)
+	public ModelAndView fail(){
+		ModelAndView mv=new ModelAndView("failure");
 		return mv;
 	}
 	

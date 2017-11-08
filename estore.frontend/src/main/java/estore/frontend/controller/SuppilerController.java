@@ -23,6 +23,7 @@ import com.nec.estore.backend.model.Product;
 import com.nec.estore.backend.model.Supplier;
 
 @Controller
+@RequestMapping("/admin")
 public class SuppilerController{
 	@Autowired
 	private ProductDao productDao;
@@ -45,18 +46,8 @@ public class SuppilerController{
 		return mv;
 	}
 	
-	@RequestMapping(value="/stock" , method=RequestMethod.POST)
-	public ModelAndView viewMyProducts() {
-		ModelAndView mv=new ModelAndView ("stock");
-		List<Product> products=productDao.findAll();
-		mv.getModelMap().addAttribute("products", products);
-		List<Category> categories=categoryDao.findAll();
-		mv.getModelMap().addAttribute("categories", categories);
-		List<Supplier> suppliers=supplierDao.findAll();
-		mv.getModelMap().addAttribute("suppliers", suppliers);
-		return mv;
-	}
-	@RequestMapping(value="admin/stock" , method=RequestMethod.GET)
+	
+	@RequestMapping(value="/admin/stock" , method=RequestMethod.GET)
 	public ModelAndView myStocks() {
 		ModelAndView mv=new ModelAndView ("stock");
 		List<Product> products=productDao.findAll();
@@ -68,17 +59,7 @@ public class SuppilerController{
 		return mv;
 	}
 	
-	@RequestMapping(value="admin/stock" , method=RequestMethod.POST)
-	public ModelAndView viewMystocks() {
-		ModelAndView mv=new ModelAndView ("stock");
-		List<Product> products=productDao.findAll();
-		mv.getModelMap().addAttribute("products", products);
-		List<Category> categories=categoryDao.findAll();
-		mv.getModelMap().addAttribute("categories", categories);
-		List<Supplier> suppliers=supplierDao.findAll();
-		mv.getModelMap().addAttribute("suppliers", suppliers);
-		return mv;
-	}
+	
 	
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)
@@ -89,7 +70,7 @@ public class SuppilerController{
 		
 }	
 	
-	@RequestMapping(value="admin/addsupplier", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addsupplier", method=RequestMethod.GET)
 	public ModelAndView viewAddSupplier(){
 		ModelAndView mv=new ModelAndView("add","command",new Supplier());
 		//ModelAndView mv1=new ModelAndView("add","command",new Category());
@@ -97,7 +78,7 @@ public class SuppilerController{
 		
 }
 		
-	@RequestMapping(value="admin/addsupplier", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addsupplier", method=RequestMethod.POST)
 	 public ModelAndView addSupplier(@ModelAttribute("supplier") Supplier supplier){
 		supplierDao.save(supplier);
 		ModelAndView mv=new ModelAndView("redirect:stock");
@@ -112,7 +93,7 @@ public class SuppilerController{
 		
 	}	
 	
-	@RequestMapping(value="admin/updatesupplier", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updatesupplier", method=RequestMethod.GET)
 	public ModelAndView viewUpdateSupplier(Model model,@RequestParam("id") int id){
 		ModelAndView mv=new ModelAndView("update");
 		Supplier supplier=supplierDao.findById(id);
@@ -120,7 +101,7 @@ public class SuppilerController{
 		return mv;
 	}
 	
-	@RequestMapping(value="admin/updatesupplier", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updatesupplier", method=RequestMethod.POST)
 	// public ModelAndView updateProduct(@ModelAttribute("product") Product product){
 	public ModelAndView updateSupplier(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mv=new ModelAndView("redirect:stock");
@@ -136,7 +117,7 @@ public class SuppilerController{
 		
 	 }
 	
-	@RequestMapping(value="admin/deletesupplier", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/deletesupplier", method=RequestMethod.GET)
 	public ModelAndView viewDelete(@RequestParam("id") int id){
 		ModelAndView mv=new ModelAndView("redirect:stock","command",new Supplier());
 		supplierDao.delete(id);
