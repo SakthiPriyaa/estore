@@ -1,17 +1,54 @@
 package com.nec.estore.backend.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+@Entity
 @Table(name="Cart")
-public class Cart {
-	private String cartId;
-	private Map<String,CartItem> cartItems;
+public class Cart implements Serializable {
+	private static final long serialVersionUID = -4045729241960416615L;
+	
+	@Id
+	@GeneratedValue
+	private int id;
+	@Column(name = "grand_total")	
+	private double grandTotal;
+	@Column(name = "cart_Item")
+	private int cartItem;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getGrandTotal() {
+		return grandTotal;
+	}
+	public void setGrandTotal(double grandTotal) {
+		this.grandTotal = grandTotal;
+	}
+	
+	
+	public int getCartItem() {
+		return cartItem;
+	}
+	public void setCartItem(int cartItem) {
+		this.cartItem = cartItem;
+	}
+	@Override
+	public String toString() {
+		return "Cart [id=" + id + ", grandTotal=" + grandTotal + ", cartItem=" + cartItem + "]";
+	}
+	/*private Map<String,CartItem> cartItems;
 	private BigDecimal grandTotal;
 	
 	public Cart() {
@@ -19,15 +56,15 @@ public class Cart {
 		grandTotal = new BigDecimal(0);
 	}
 	
-	public Cart(String cartId) {
+	public Cart(int cartId) {
 		this();
 		this.cartId = cartId;
 	}
 	
-	public String getCartId() {
+	public int getCartId() {
 		return cartId;
 	}
-	public void setCartId(String cartId) {
+	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
 	public Map<String, CartItem> getCartItems() {
@@ -41,7 +78,7 @@ public class Cart {
 	}
 	public void setGrandTotal(BigDecimal grandTotal) {
 		this.grandTotal = grandTotal;
-	}
+	}*/
 	/*public void addCartItem(CartItem item) {
 		String productId = item.getProduct().getProductId();
 		
