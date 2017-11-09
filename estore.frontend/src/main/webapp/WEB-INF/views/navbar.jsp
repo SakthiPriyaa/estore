@@ -22,8 +22,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
     
       <ul class="nav navbar-nav">
-      <c:if test="${customer ne null }">
-        <c:if test="${customer.role eq 'ROLE_ADMIN'}">
+      <c:if test="${sessionScope['customer'] ne null }">
+        <c:if test="${sessionScope['customer'].role eq 'ROLE_ADMIN'}">
         <li><a href="admin/stock"><span class="glyphicon glyphicon-shopping-home"></span>AdminHome</a></li>
         <li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>Add<!-- <span class="glyphicon glyphicon-chevron-down"></span> --></a>
 			 <ul class="dropdown-menu">
@@ -34,7 +34,7 @@
 		</li>
 		<li><a href="admin/orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
 		</c:if></c:if>
-		<c:if test="${customer.role ne'ROLE_ADMIN'}">
+		<c:if test="${sessionScope['customer'].role ne'ROLE_ADMIN'}">
       <li><a href="home"><span class="glyphicon glyphicon-shopping-home"></span>Home</a></li>
         <li><a href="products">Products</a></li>
         <li><a href="cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="badge"></span></a></li>
@@ -48,13 +48,13 @@
             		 <!-- <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li> -->
           
  			 <c:choose>	
- 			 <c:when test="${customer eq null}">
+ 			 <c:when test="${sessionScope['customer'] eq null}">
         			<li><a href="register"><span class="glyphicon glyphicon-pencil"></span>Register</a></li>
         			<li><a href="login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
         			 
        			 
         		</c:when>
-				<c:when test="${customer ne null}">   				          		
+				<c:when test="${sessionScope['customer'] ne null}">   				          		
       		  		<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>LogOut</a></li>
       		  	</c:when>
       		  	</c:choose>
