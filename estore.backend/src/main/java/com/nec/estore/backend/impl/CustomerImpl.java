@@ -41,6 +41,21 @@ public class CustomerImpl implements CustomerDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Customer findById(String email) {
+		List results = null;
+		Session session=sessionFactory.openSession();
+		String hql = "FROM Customer C WHERE C.email = '" + email + "'" ;
+		Query query = session.createQuery(hql);
+		
+		results = query.list();
+		if(results!=null)
+			return (Customer) results.get(0);
+		
+		else
+			return null;	
+		
+	}
 
 	public Customer findByEmail(String email,String password) {
 		// TODO Auto-generated method stub

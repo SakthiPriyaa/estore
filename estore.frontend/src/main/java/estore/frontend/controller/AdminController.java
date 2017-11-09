@@ -34,7 +34,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView showHome(){
-		ModelAndView mv=new ModelAndView("home");
+		ModelAndView mv=new ModelAndView("stock");
 		return mv;
 	}
 	

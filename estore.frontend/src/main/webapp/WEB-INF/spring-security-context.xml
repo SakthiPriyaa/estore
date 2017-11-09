@@ -12,16 +12,31 @@
 		<!-- <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" /> -->
 		<security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
 		
-		<security:form-login login-page="/login" default-target-url="/stock/" authentication-failure-url="/failure"/>		
+		<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/failure"/>		
 		<security:logout logout-url="/"/>		
 		<!-- <security:csrf disabled="true"/> -->
 	</security:http>
+	<bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+    <property name="driverClassName" value="org.h2.Driver" />
+    <property name="url" value="jdbc:h2:tcp://localhost/~/test" />
+    <property name="username" value="sa" />
+    <property name="password" value="" />
+   </bean>
 		<security:authentication-manager>
-		<security:authentication-provider>
+		<!-- <security:authentication-provider>
 			<security:user-service>
 				<security:user name="adminsakthi@example.com" password="admin"  authorities="ROLE_ADMIN" />
 			</security:user-service>
-		</security:authentication-provider>
+		</security:authentication-provider> -->
+		<security:authentication-provider>
+		<security:jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "select cust_email, cust_password, cust_enabled from customers where cust_email=?"
+		  authorities-by-username-query=
+		    "select cust_email, cust_role from customers where cust_email=? and (cust_role = 'ROLE_ADMIN' OR cust_role = 'ROLE_USER') " />
+	  </security:authentication-provider>
 	</security:authentication-manager>
 
 </beans>

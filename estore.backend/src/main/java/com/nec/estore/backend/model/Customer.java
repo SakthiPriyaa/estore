@@ -28,6 +28,8 @@ public class Customer {
 	private String confirmpassword;
 	@Column(name="cust_role")
 	private String role;
+	@Column(name="cust_enabled")
+	private boolean enabled;
 	
 	public String getRole() {
 		return role;
@@ -76,6 +78,12 @@ public class Customer {
 	}
 	public void setConfirmpassword(String confirmpassword) {
 		this.confirmpassword = confirmpassword;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 

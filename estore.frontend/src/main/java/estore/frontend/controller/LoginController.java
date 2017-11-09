@@ -60,6 +60,14 @@ public class LoginController {
 		ModelAndView mv=new ModelAndView("home");
 		return mv;
 	}
+	@RequestMapping(value="/admin/logout", method=RequestMethod.GET)
+	public ModelAndView adminLogout(HttpServletRequest request, HttpServletResponse response){
+		HttpSession session=request.getSession(false);
+		if(session!=null)
+		 	session.invalidate();
+		ModelAndView mv=new ModelAndView("home");
+		return mv;
+	}
 	@RequestMapping(value="/failure", method=RequestMethod.GET)
 	public ModelAndView fail(){
 		ModelAndView mv=new ModelAndView("failure");
