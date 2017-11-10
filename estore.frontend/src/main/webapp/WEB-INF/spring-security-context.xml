@@ -13,7 +13,7 @@
 		<security:intercept-url pattern="/admin/*" access="hasRole('ROLE_ADMIN')" />
 		
 		<security:form-login login-page="/login" default-target-url="/" authentication-failure-url="/failure"/>		
-		<security:logout logout-url="/"/>		
+		<security:logout logout-url="/logout" logout-success-url="/" invalidate-session="true" delete-cookies="JSESSIONID"/>		
 		<!-- <security:csrf disabled="true"/> -->
 	</security:http>
 	<bean id="dataSource"

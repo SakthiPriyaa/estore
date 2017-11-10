@@ -34,9 +34,10 @@ public class AdminController {
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView showHome(){
-		ModelAndView mv=new ModelAndView("stock");
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		return mv;
 	}
+	
 	
 	@RequestMapping(value="/addproduct", method=RequestMethod.GET)
 	public ModelAndView viewAddProduct(){
@@ -62,7 +63,7 @@ public class AdminController {
 		product.setCid(category);
 		product.setSid(supplier);
 		productDao.save(product);
-		ModelAndView mv=new ModelAndView("stock");
+		ModelAndView mv=new ModelAndView("redirect:stock");
 		return mv;
 	 }
 	

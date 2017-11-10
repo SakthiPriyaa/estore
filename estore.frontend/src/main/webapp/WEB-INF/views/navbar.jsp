@@ -24,15 +24,15 @@
       <ul class="nav navbar-nav">
       <c:if test="${sessionScope['customer'] ne null }">
         <c:if test="${sessionScope['customer'].role eq 'ROLE_ADMIN'}">
-        <li><a href="admin/stock"><span class="glyphicon glyphicon-shopping-home"></span>AdminHome</a></li>
-        <li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>Add<!-- <span class="glyphicon glyphicon-chevron-down"></span> --></a>
+        <li><a href="<c:url value='/admin/stock'></c:url>"><span class="glyphicon glyphicon-shopping-home"></span>AdminHome</a></li>
+        <li  class="dropdown"><a href="#"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span>Add</a>
 			 <ul class="dropdown-menu">
-				<li><a href="admin/addproduct">Product</a>
-				<li><a href="admin/addcategory">Category</a>
-				<li><a href="admin/addsupplier">Supplier</a>
+				<li><a href="<c:url value='/admin/addproduct'></c:url>">Product</a>
+				<li><a href="<c:url value='/admin/addcategory'></c:url>">Category</a>
+				<li><a href="<c:url value='/admin/addsupplier'></c:url>">Supplier</a>
 			</ul>
 		</li>
-		<li><a href="admin/orders"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
+		<li><a href="<c:url value='/admin/orders'></c:url>"><span class="glyphicon glyphicon-tasks"></span>My Orders<span class="badge">2</span> </a></li>
 		</c:if></c:if>
 		<c:if test="${sessionScope['customer'].role ne'ROLE_ADMIN'}">
       <li><a href="home"><span class="glyphicon glyphicon-shopping-home"></span>Home</a></li>

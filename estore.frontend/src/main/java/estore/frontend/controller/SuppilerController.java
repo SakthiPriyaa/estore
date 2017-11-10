@@ -33,7 +33,7 @@ public class SuppilerController{
 	
 	/*Supplier Page-stock*/
 		
-	@RequestMapping(value="/stock" , method=RequestMethod.GET)
+	/*@RequestMapping(value="/stock" , method=RequestMethod.GET)
 	public ModelAndView myProducts() {
 		ModelAndView mv=new ModelAndView ("stock");
 		List<Product> products=productDao.findAll();
@@ -44,7 +44,7 @@ public class SuppilerController{
 		mv.getModelMap().addAttribute("suppliers", suppliers);
 		return mv;
 	}
-	
+	*/
 	
 	/*@RequestMapping(value="/admin/stock" , method=RequestMethod.GET)
 	public ModelAndView myStocks() {

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,16 +37,12 @@ public class LoginController {
 		if(customer!=null){
 			HttpSession session=request.getSession(true);
 			session.setAttribute("name", customer.getName());
-			session.setAttribute("email", customer.getEmail());
-			
-			if(email=="adminsakthi@example.com") {
-				mv=new ModelAndView("redirect:stock");
-			}
-			else {
-				mv=new ModelAndView("redirect:home");
+			//session.setAttribute("email", customer.getEmail());
+			session.setAttribute("customer", customer);
+				mv=new ModelAndView("redirect:./");
 			}
 			
-		}
+		
 		/*else{
 			mv=new ModelAndView("redirect:failure");		
 			//mv.getModelMap().addAttribute("customer", customer);
@@ -55,17 +52,19 @@ public class LoginController {
 	@RequestMapping(value="/logout", method=RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session=request.getSession(false);
+		SecurityContextHolder.clearContext();
 		if(session!=null)
 		 	session.invalidate();
-		ModelAndView mv=new ModelAndView("home");
+		ModelAndView mv=new ModelAndView("redirect:./");
 		return mv;
 	}
 	@RequestMapping(value="/admin/logout", method=RequestMethod.GET)
 	public ModelAndView adminLogout(HttpServletRequest request, HttpServletResponse response){
 		HttpSession session=request.getSession(false);
+		SecurityContextHolder.clearContext();
 		if(session!=null)
 		 	session.invalidate();
-		ModelAndView mv=new ModelAndView("home");
+		ModelAndView mv=new ModelAndView("redirect:./");
 		return mv;
 	}
 	@RequestMapping(value="/failure", method=RequestMethod.GET)
