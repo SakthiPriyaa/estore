@@ -28,7 +28,7 @@
       </div></div></div>
       <%-- <a href="view?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a> --%>
   <div class="row">  
-    <div class="col-sm-12">
+    <div align="center" "col-sm-12">
       <c:forEach items="${products}" var="p"> 
       <div align="center" class="col-sm-2 panel-body center">${p.pid}</div>
       <div align="center" class="col-sm-2 panel-body">${p.pname}</div>
@@ -39,14 +39,16 @@
       <a href="updateproduct?id=${p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
       <a href="deleteproduct?id=${p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
+      <!-- <div class="col-sm-12 panel panel-default"></div>	 -->
       </c:forEach>      
       </div>
+      
       </div>
 </div></div>
 
 <div class="container"> 
 <div class="row">
-<!-- <div class="col-sm-12 panel panel-default"></div>	 -->
+<div class="col-sm-12 panel panel-default"></div>	
 <div  align="center"class="col-sm-4 col-sm-offset-4">
 <div class="panel panel-info">
 <div align="center" class="panel-heading"><b style="font-size:150%;">Categories List</b></div>
@@ -77,6 +79,7 @@
 </div>
 <div class="container">
 <div class="row">	
+<div class="col-sm-12 panel panel-default"></div>	
 <div  align="center"class="col-sm-4 col-sm-offset-4">
 <div class="panel panel-info">
 <div align="center" class="panel-heading"><b style="font-size:150%;">Suppliers List</b></div>
@@ -113,6 +116,7 @@
 	</div> -->
       </c:forEach>
       </div></div>
+      <div class="col-sm-12 panel panel-default"></div>	
 </div>
 
    

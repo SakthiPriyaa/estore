@@ -4,25 +4,32 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Cart")
 public class Cart implements Serializable {
-	private static final long serialVersionUID = -4045729241960416615L;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue
 	private int id;
+	
+	@OneToMany
+	private Map<String,CartItem> cartItems;
+	
 	@Column(name = "grand_total")	
 	private double grandTotal;
-	@Column(name = "cart_Item")
-	private int cartItem;
+	
+	/*@Column(name = "cart_Item")
+	private int cartItem;*/
 	
 	public int getId() {
 		return id;
@@ -30,6 +37,19 @@ public class Cart implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public Map<String, CartItem> getCartItems() {
+		return cartItems;
+	}
+	public void setCartItems(Map<String, CartItem> cartItems) {
+		this.cartItems = cartItems;
+	}
+	/*public Set<CartItem> getCartItems() {
+		return cartItems;
+	}
+	public void setCartItems(Set<CartItem> cartItems) {
+		this.cartItems = cartItems;
+	}*/
 	public double getGrandTotal() {
 		return grandTotal;
 	}
@@ -38,15 +58,15 @@ public class Cart implements Serializable {
 	}
 	
 	
-	public int getCartItem() {
+	/*public int getCartItem() {
 		return cartItem;
 	}
 	public void setCartItem(int cartItem) {
 		this.cartItem = cartItem;
-	}
+	}*/
 	@Override
 	public String toString() {
-		return "Cart [id=" + id + ", grandTotal=" + grandTotal + ", cartItem=" + cartItem + "]";
+		return "Cart [id=" + id + ", grandTotal=" + grandTotal + "]";//", cartItem=" + cartItem +
 	}
 	/*private Map<String,CartItem> cartItems;
 	private BigDecimal grandTotal;

@@ -33,20 +33,21 @@ public class LoginController {
 		String password=request.getParameter("password");
 		Customer customer=customerDao.findByEmail(email,password);	
 		//request.setAttribute("customer", customer );
+		//String page=request.getRequestURI();
 		ModelAndView mv=null;
 		if(customer!=null){
 			HttpSession session=request.getSession(true);
 			session.setAttribute("name", customer.getName());
-			//session.setAttribute("email", customer.getEmail());
 			session.setAttribute("customer", customer);
-				mv=new ModelAndView("redirect:./");
+
+				mv=new ModelAndView("/");
 			}
 			
 		
-		/*else{
+		else{
 			mv=new ModelAndView("redirect:failure");		
-			//mv.getModelMap().addAttribute("customer", customer);
-		}	*/		
+			
+		}			
 		return mv;
 	}
 	@RequestMapping(value="/logout", method=RequestMethod.GET)
@@ -64,7 +65,7 @@ public class LoginController {
 		SecurityContextHolder.clearContext();
 		if(session!=null)
 		 	session.invalidate();
-		ModelAndView mv=new ModelAndView("redirect:./");
+		ModelAndView mv=new ModelAndView("redirect:../");
 		return mv;
 	}
 	@RequestMapping(value="/failure", method=RequestMethod.GET)

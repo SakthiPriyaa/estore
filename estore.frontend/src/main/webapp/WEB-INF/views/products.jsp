@@ -23,8 +23,8 @@ $(document).ready(function(){
         <div class="panel-heading">${p.pname}</div>
         <div class="panel-body"><a href="prodesc?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a></div>
         <div class="panel-footer">Price:${p.pprice}
-			<a href="prodesc?id=${p.pid}"  role="button"  class="btn btn-warning btn-sm btn-block">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span>
-								</a></div>
+			<a href="prodesc?id=${p.pid}"  role="button"  class="btn btn-warning btn-sm btn-block">View Product Description<span class="glyphicon glyphicon-menu-right"><span class="glyphicon glyphicon-menu-right">
+				</span>	</span>			</a></div>
       </div>
     </div></c:forEach></div></div>
     <%-- <div class="col-sm-4"> 

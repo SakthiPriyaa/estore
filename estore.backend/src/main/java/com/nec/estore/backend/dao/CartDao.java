@@ -19,15 +19,15 @@ public interface CartDao {
 	
 	public List<CartItem> list(int cartId);
 	public CartItem get(int id);	
-	public boolean add(CartItem cartLine);
-	public boolean update(CartItem cartLine);
-	public boolean delete(CartItem cartLine);
+	public void add(CartItem cartItem);
+	public void update(CartItem cartItem);
+	public void delete(CartItem cartItem);
 
 	// fetch the CartLine based on cartId and productId
 	public CartItem getByCartAndProduct(int cartId, int productId);		
 		
 	// updating the cart
-	boolean updateCart(Cart cart);
+	public void updateCart(Cart cart);
 	
 	// list of available cartLine
 	public List<CartItem> listAvailable(int cartId);

@@ -1,18 +1,20 @@
 package com.nec.estore.backend.model;
 import java.io.Serializable; 
+
 //import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+//import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="CartItems")
 public class CartItem implements Serializable{
-	private static final long serialVersionUID = -4045729241960416615L;
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
@@ -21,16 +23,16 @@ public class CartItem implements Serializable{
 	@OneToOne
 	private Product product;
 	
-	@Column(name = "cart_id")
-	private int cartId;	
+	/*@Column(name = "cart_id")
+	private int cartId;	*/
 	
-	@Column(name = "product_count")
-	private int productCount;
+	@Column(name = "item_count")
+	private int itemCount;
 	
 	private double total;
 	
-	@Column(name = "buying_price")
-	private double buyingPrice;
+	@Column(name = "item_price")
+	private double itemPrice;
 	
 	@Column(name = "is_available")
 	private boolean available = true;
@@ -39,14 +41,15 @@ public class CartItem implements Serializable{
 	 * setter and getters for the above fields
 	 * */
 	
-	public double getBuyingPrice() {
-		return buyingPrice;
-	}
-	public void setBuyingPrice(double buyingPrice) {
-		this.buyingPrice = buyingPrice;
-	}
+	
 	public int getId() {
 		return id;
+	}
+	public double getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(double itemPrice) {
+		this.itemPrice = itemPrice;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -57,17 +60,18 @@ public class CartItem implements Serializable{
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	public int getCartId() {
+	/*public int getCartId() {
 		return cartId;
 	}
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
+	}*/
+	
+	public int getItemCount() {
+		return itemCount;
 	}
-	public int getProductCount() {
-		return productCount;
-	}
-	public void setProductCount(int productCount) {
-		this.productCount = productCount;
+	public void setItemCount(int itemCount) {
+		this.itemCount = itemCount;
 	}
 	public double getTotal() {
 		return total;

@@ -40,28 +40,28 @@ public class CartImpl implements CartDao{
 		return (CartItem)sessionFactory.openSession().get(CartItem.class,id);
 	}
 
-	public boolean add(CartItem entity) {
+	public void add(CartItem entity) {
 		Session s=sessionFactory.openSession();
 		s.beginTransaction();
 		s.save(entity);
 		s.getTransaction().commit();
 		s.close();
-		return true;
+		//return;
 	}
 
-	public boolean update(CartItem entity) {
+	public void update(CartItem entity) {
 		// TODO Auto-generated method stub
 		Session s=sessionFactory.openSession();
 		s.beginTransaction();
 		s.saveOrUpdate(entity);
 		s.getTransaction().commit();
 		s.close();	
-		return true;
+		//return true;
 	}
 
-	public boolean delete(CartItem cartLine) {
+	public void delete(CartItem cartLine) {
 		sessionFactory.getCurrentSession().delete(cartLine);
-		return true;
+		//return true;
 	}
 
 	public CartItem getByCartAndProduct(int cartId, int productId) {
@@ -91,13 +91,13 @@ public class CartImpl implements CartDao{
 		return list;*/
 	}
   
-	public boolean updateCart(Cart cart) {
+	public void updateCart(Cart cart) {
 		Session s=sessionFactory.openSession();
 		s.beginTransaction();
 		s.saveOrUpdate(cart);
 		s.getTransaction().commit();
 		s.close();
-		return true;
+		//return true;
 	}
 
 	public List<CartItem> listAvailable(int cartId) {
