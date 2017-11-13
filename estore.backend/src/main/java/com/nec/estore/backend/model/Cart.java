@@ -3,6 +3,7 @@ package com.nec.estore.backend.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -23,47 +24,65 @@ public class Cart implements Serializable {
 	private int id;
 	
 	@OneToMany
-	private Map<String,CartItem> cartItems;
+	//private Map<String,CartItem> cartItems;
+	private List<CartItem> cartItems;
 	
 	@Column(name = "grand_total")	
 	private double grandTotal;
 	
-	/*@Column(name = "cart_Item")
-	private int cartItem;*/
+	@Column(name = "cart_Item")
+	private CartItem cartItem;
 	
+
+
 	public int getId() {
 		return id;
 	}
+
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public Map<String, CartItem> getCartItems() {
+
+
+
+	public List<CartItem> getCartItems() {
 		return cartItems;
 	}
-	public void setCartItems(Map<String, CartItem> cartItems) {
+
+
+
+	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
-	/*public Set<CartItem> getCartItems() {
-		return cartItems;
-	}
-	public void setCartItems(Set<CartItem> cartItems) {
-		this.cartItems = cartItems;
-	}*/
+
+
+
 	public double getGrandTotal() {
 		return grandTotal;
 	}
+
+
+
 	public void setGrandTotal(double grandTotal) {
 		this.grandTotal = grandTotal;
 	}
-	
-	
-	/*public int getCartItem() {
+
+
+
+	public CartItem getCartItem() {
 		return cartItem;
 	}
-	public void setCartItem(int cartItem) {
+
+
+
+	public void setCartItem(CartItem cartItem) {
 		this.cartItem = cartItem;
-	}*/
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Cart [id=" + id + ", grandTotal=" + grandTotal + "]";//", cartItem=" + cartItem +

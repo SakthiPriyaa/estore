@@ -23,8 +23,8 @@ public class CartItem implements Serializable{
 	@OneToOne
 	private Product product;
 	
-	/*@Column(name = "cart_id")
-	private int cartId;	*/
+	@Column(name = "cart_id")
+	private int cartId;	
 	
 	@Column(name = "item_count")
 	private int itemCount;
@@ -60,12 +60,12 @@ public class CartItem implements Serializable{
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	/*public int getCartId() {
+	public int getCartId() {
 		return cartId;
 	}
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
-	}*/
+	}
 	
 	public int getItemCount() {
 		return itemCount;
