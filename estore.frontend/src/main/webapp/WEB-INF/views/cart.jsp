@@ -16,26 +16,27 @@
 </div>
 </div>			
   <div class="row">  
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="panel panel-primary">
+      <div align="center" class="col-sm-2 panel-heading">Product_Image</div>
       <div align="center" class="col-sm-2 panel-heading">Product_Name</div>
       <div align="center" class="col-sm-2 panel-heading">Quantity</div>
-      <div align="center" class="col-sm-2 panel-heading">Price</div>
+      <div align="center" class="col-sm-2 panel-heading">Cost</div>
       <div align="center" class="col-sm-2 panel-heading">Amount</div>
       <div align="center" class="col-sm-2 panel-heading">Action</div>
       </div></div></div>
       <%-- <a href="view?id=${p.pid}"><img src="./resource/images/${p.pimg}" class="img-responsive" style="width:100%" ></a> --%>
-        <c:forEach items="${sessionScope['cart'].cartItems}" var="c"> 
+        <c:forEach items="${sessionScope['cart'].items}" var="c"> 
   <div class="row">  
-    <div class="col-sm-10">
-
+    <div class="col-sm-12">
+	  <div align="center" class="col-sm-2 panel-body">${c.product.pimg}</div>
       <div align="center" class="col-sm-2 panel-body">${c.product.pname}</div>
-      <div align="center" class="col-sm-2 panel-body">${c.itemCount}</div>
-      <div align="center" class="col-sm-2 panel-body">${c.itemPrice}</div>
-     <%--  <div align="center" class="col-sm-2 panel-body">${c.total}</div> --%>
+      <div align="center" class="col-sm-2 panel-body">${c.quantity}</div>
+      <div align="center" class="col-sm-2 panel-body">${c.product.pprice}</div>
+      <div align="center" class="col-sm-2 panel-body">${c.quantity * c.product.pprice}</div>
       <div align="center" class="col-sm-2 panel-body">
-      <a href="updateitem?id=${p.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
-      <a href="deleteitem?id=${p.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
+      <a href="prodesc?id=${c.product.pid}" type="button" class="btn btn-warning btn-sm "  ><span class="glyphicon glyphicon-pencil"></span></a>
+      <a href="deleteitem?id=${c.product.pid}" type="button" class="btn btn-danger btn-sm " ><span class="glyphicon glyphicon-trash"></span></a>
       </div>
       
        

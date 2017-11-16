@@ -26,8 +26,8 @@ import com.nec.estore.backend.model.Product;
 public class CartController {
 	@Autowired
 	private ProductDao productDao;
-	@Autowired
-	private CartDao cartDao;
+/*	@Autowired
+	private CartDao cartDao;*/
 	
 	@RequestMapping(value="/cart", method=RequestMethod.GET)
 	public ModelAndView getCartItems(Model model,HttpServletRequest request,HttpServletResponse response) {
@@ -47,12 +47,55 @@ public class CartController {
 	}
 	
 	@RequestMapping(value="/addToCart", method=RequestMethod.GET)
-	public ModelAndView getProductById(Model model,@RequestParam("id") int pid) {
-		ModelAndView mv=new ModelAndView("cartitem");
+	public ModelAndView getProductById(Model model,@RequestParam("id") int pid, @RequestParam("txtQuantity") int quantity, HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv=new ModelAndView("redirect:products");
 		Product product =productDao.findById(pid);
-		mv.getModelMap().addAttribute("product", product);
+		HttpSession session=request.getSession(false);
+		Cart cart=null;
+		if(session!=null){
+			cart=(Cart) session.getAttribute("cart");
+			CartItem item=new CartItem();
+			item.setProduct(product);
+			item.setQuantity(quantity);			
+			if(cart==null){				
+				cart=new Cart();	
+			}
+			boolean state=false;
+			for(CartItem c : cart.getItems()){
+				if(c.getProduct().getPname().equals(product.getPname())){
+					c.setQuantity(item.getQuantity() + c.getQuantity());
+					state=true;
+				}
+			}
+			if(!state)
+			cart.getItems().add(item);
+		}	
+		session.setAttribute("cart", cart);
 		return mv;
 	}
+	@RequestMapping(value="/deleteitem", method=RequestMethod.GET)
+	public ModelAndView getDeleteById(Model model,@RequestParam("id") int pid, HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv=new ModelAndView("redirect:products");
+		Product product =productDao.findById(pid);
+		HttpSession session=request.getSession(false);
+		Cart cart=null;
+		if(session!=null){
+			cart=(Cart) session.getAttribute("cart");
+			CartItem item=new CartItem();
+			for(CartItem c : cart.getItems()){
+				if(c.getProduct().getPname().equals(product.getPname())){
+					item=cart.getItems().set(c.getId(), c);
+					cart.getItems().remove(item);					
+				}
+			}
+		}
+		//cart.getItems();	
+		session.setAttribute("cart", cart);
+		return mv;
+	
+	}
+}
+	/*
 	@RequestMapping(value="/updateCart", method=RequestMethod.GET)
 	public ModelAndView getProductById(Model model, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv=new ModelAndView("cart");
@@ -77,7 +120,7 @@ public class CartController {
 		}		
 		return mv;
 	}	
-/*	@RequestMapping(value="/addToCart", method=RequestMethod.POST)
+	@RequestMapping(value="/addToCart", method=RequestMethod.POST)
 	public ModelAndView getMyProductById(Model model,@RequestParam("id") int pid,HttpServletRequest request) {
 		//ModelAndView mv=new ModelAndView("cart");
 		Cart cart=new Cart();
@@ -143,4 +186,4 @@ public class CartController {
 	
 	
 
-}
+
