@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Collaborative Portal</title>
+
+  <!-- CSS  -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  
+ <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">-->
+  
+  
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+	
+       
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+ <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="assets/img/Capture.png"></img></a>   
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"></a></li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">						
+			<li><a href="home.html"><strong>Blog</strong><span class="glyphicon glyphicon-bitcoin "></span></a></li> 
+			<li><a href="#"><strong>Forum </strong><span class="fa fa-group "></span></a></li>
+			<li><a href="#"><strong>Jobs</strong><span class="glyphicon glyphicon-briefcase"></span></a> </li>
+			<li><a href="#"><strong>Events</strong><span class="glyphicon glyphicon-calendar "></span></a> </li>
+	  </ul>
+		
+      <!--<ul id="nav-mobile" class="side-nav">
+        <li><a href="home.html"><strong>Blog</strong><span class="glyphicon glyphicon-bitcoin "></span></a></li>
+		<li><a href="home.html"><strong>Forum </strong><span class="fa fa-group "></span></a></li>
+		<li><a href="home.html"><strong>Jobs</strong><span class="glyphicon glyphicon-briefcase "></span></a></li>
+		<li><a href="home.html"><strong>Events</strong><span class="glyphicon glyphicon-calendar "></span></a></li>
+      </ul>-->
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">bitcoin</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Collaborative Portal</h1>
+      <div class="row center">
+        <h5 class="header col s12 light blue-text">Specify Urself N Get Hired!"</h5>
+      </div>
+      <!--<div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>-->
+      <br><br>
+
+    </div>
+  </div>
+  <div class="container">
+		<div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+					
+					<div class="col-sm-5">
+                       <div class="card-panel hoverable"> 	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3 class="orange-text">Login to our site</h3>
+	                            		<p class="blue-text">Enter username and password to log on:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                     <form  ng-app="myApp" ng-submit="submitForm()" name="myForm" novalidate>                           
+	                            
+				                    <div class="form-group" ng-class="{ 'has-error' : myForm.email.$invalid && !myForm.email.$pristine }">
+				             <label class="sr-only" for="form-email">Email</label>
+				                        	<input type="email" name="email" placeholder="Email..." class="form-email form-control validate" id="form-email" ng-model="email" required>
+				                       <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+									  <span ng-show="myForm.email.$error.required">Email is required.</span>
+									  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+									  </span>
+		                        </div>	
+				                       
+				                         
+				                        
+				                        <div class="form-group" ng-class="{ 'has-error' : myForm.name.$invalid && !myForm.name.$pristine }">
+				                        	<label class="sr-only" for="form-password">Password</label>
+
+            <input type="password" name="password" class="form-control validate" placeholder="Password..."ng-model="password" required>
+            
+            <p style="color:red" ng-show="myForm.password.$invalid && !myForm.password.$pristine" class="help-block">Password is required.</p>
+        </div>
+				                        <button type="submit" class="btn">Sign in!</button>
+				                    </form>
+			                    </div>
+		                    </div>
+		                
+		                	<div class="social-login">
+	                        	<h3>...or login with:</h3>
+	                        	<div class="social-login-buttons">
+		                        	<a class="btn  light-blue darken-3" href="#">
+		                        		<i class="fa fa-facebook"></i> Facebook
+		                        	</a>
+		                        	<a class="btn  cyan accent-3" href="#">
+		                        		<i class="fa fa-twitter"></i> Twitter
+		                        	</a>
+		                        	<a class="btn red darken-1" href="#">
+		                        		<i class="fa fa-google-plus"></i> Google Plus
+		                        	</a>
+	                        	</div>
+	                        </div>
+	                        
+                        </div></div>
+                        
+                    
+                    <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	<div class="card-panel hoverable">
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3 class="orange-text">Sign up now</h3>
+	                            		<p class="blue-text">Fill in the form below to get instant access:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                <form name="userForm" ng-submit="submitForm()" novalidate>
+				                
+				                    	<div class="form-group input-field"  ng-class="{ 'has-error' : userForm.firstname.$invalid && !userForm.firstname.$pristine }">
+				                    		<!-- <input  id="firstname" name="name"    data-length="10" ng-model="user.name" required">
+				                    		 <p style="color:red" ng-show="userForm.firstname.$invalid && !userForm.firstname.$pristine" class="help-block">First name is required.</p>
+											<label class="active" for="first_name">First Name</label> -->
+											 <input type="text" name="firstname" class="validate"data-length="15"ng-model="firstname" required>
+											 <label class="active" for="first_name">First Name</label>
+														  <span style="color:red" ng-show="userForm.firstname.$dirty && userForm.firstname.$invalid">
+														  <span ng-show="userForm.firstname.$error.required">Firstname is required.</span>
+														  </span>
+				                        </div>
+				                        <div class="form-group input-field"  ng-class="{ 'has-error' : userForm.lastname.$invalid && !userForm.lastname.$pristine }">
+				                    		 <input type="text" name="lastname" class="validate"data-length="15" ng-model="lastname" required>
+											 <label class="active" for="last_name">Last Name</label>
+														  <span style="color:red" ng-show="userForm.lastname.$dirty && userForm.lastname.$invalid">
+														  <span ng-show="userForm.lastname.$error.required">Lastname is required.</span>
+														  </span>
+				                        </div>
+				                        <div class="form-group input-field"  ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }" >
+				                    		<input  name="email" type="email" class="validate"data-length="30" ng-model="email" required >
+											<label class="active" for="email">Email</label>
+											<span style="color:red" ng-show="userForm.email.$dirty && userForm.email.$invalid">
+            								<span ng-show="userForm.email.$error.required">Email is required.</span>
+											<span ng-show="userForm.email.$error.email">Invalid email address.</span>
+ 											 </span>
+				                        </div>
+										<div class="form-group" >
+										<label class="active" for="gender">Gender:</label>
+											<input class="with-gap"name="gender" type="radio" id="male" />
+											<label for="male">Male</label>
+											<input class="with-gap"name="gender" type="radio" id="female" />
+											<label for="female">Female</label>
+											
+											
+										</div>
+										<div class="form-group input-field" ng-class="{ 'has-error' : userForm.birthdate.$invalid && !userForm.birthdate.$pristine }">
+										<label class="active" for="birthdate">Birthday</label>
+											<input type="text" name="birthdate" class="datepicker" ng-model="birthdate" required>
+											<span style="color:red" ng-show="userForm.birthdate.$dirty && userForm.birthdate.$invalid">
+            								<span ng-show="userForm.birthdate.$error.required">Birthdate is required.</span>
+											 </span>
+										</div>
+				                        <div class="form-group input-field" ng-class="{ 'has-error' : userForm.about.$invalid && !userForm.about.$pristine }">
+				                        	
+											<textarea  name="about" class="materialize-textarea validate" data-length="120" ng-model="about" required></textarea>
+											<label calss="active" for="about">About yourself</label>
+											<p style="color:red" ng-show="userForm.about.$invalid && !userForm.about.$pristine" class="help-block">Your description is required.</p>
+				                        </div>
+										<div class="form-group input-field">
+				                    		<input  name="password" type="password" class="validate" data-length="15" ng-model="formData.password" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required >
+											<label class="active" for="password">Password</label>
+											<span style="color:red" ng-show="!userForm.password.$error.required &&  userForm.password.$error.pattern && userForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+				                        </div>
+				                        <div class="form-group input-field">
+				                    		<input  name="confirmpassword" type="password" class="validate" data-length="15" ng-model="formData.confirmpassword" ng-pattern="formData.password" required >
+											<label class="active" for="confirmpassword">Confirm Password</label>
+											<span style="color:red" ng-show="formData.password != formData.confirmpassword">Passwords must match.</span>
+				                        </div>
+										
+				                        <a type="submit"role="button" class="btn waves-effect waves-light blue" href="home.html" ng-disabled="formData.password != formData.confirmpassword" ng-click="createUser()">Sign Up!</a>
+				                    </form>									
+			                    </div></div>
+                        	</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+  
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
